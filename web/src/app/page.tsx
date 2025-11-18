@@ -12,6 +12,11 @@ export default function HeaderWithLogo() {
         </button>
       </header>
 
+      {/* TEKS SELAMAT DATANG */}
+        <h2 className="text-xl font-semibold mb-6 text-gray-700 ">
+          Selamat datang di Astri AI
+        </h2>
+
       {/* LOGO + NAMA DI TENGAH */}
       <div className="flex flex-col justify-center items-center mt-10">
         {/* LOGO */}
