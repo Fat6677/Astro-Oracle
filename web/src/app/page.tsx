@@ -13,7 +13,7 @@ export default function HeaderWithLogo() {
       </header>
 
       {/* TEKS SELAMAT DATANG */}
-        <h2 className="text-xl font-semibold mb-6 text-gray-700 ">
+        <h2 className="text-xl font-semibold mb-6 text-gray-700 text-center justify-center items-center mt-20 ">
           Selamat datang di Astri AI
         </h2>
 
