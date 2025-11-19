@@ -12,6 +12,9 @@ export default function TampilanPrompt() {
       <h1 className="text-3xl font-semibold text-white mb-10">
         What are you working on?
       </h1>
+
+      {/* INPUT BOX */}
+      <div className="w-full max-w-3xl bg-[#2a2a2a] flex items-center px-4 py-3 rounded-full shadow-lg"></div>
     </div>
   );
 }
