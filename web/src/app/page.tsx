@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
- 
+
 
 export default function HeaderWithLogo() {
   return (
@@ -8,28 +8,28 @@ export default function HeaderWithLogo() {
 
       {/* HEADER */}
       <header className="flex justify-between items-center px-6 py-4 bg-blue-600 text-white">
-      <h1 className="text-xl font-bold">astro-ai</h1>
+        <h1 className="text-xl font-bold">astro-ai</h1>
 
-     <Link
-  href="/login"
-  className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition shadow"
->
-  Login
-</Link>
+        <Link
+          href="/login"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition shadow"
+        >
+          Login
+        </Link>
 
-    
-    </header>
+
+      </header>
 
       {/* TEKS SELAMAT DATANG */}
-        <h2 className="text-xl font-semibold mb-6 text-gray-700 text-center justify-center items-center mt-20 "
+      <h2 className="text-xl font-semibold mb-6 text-gray-700 text-center justify-center items-center mt-20 "
         style={{
-            fontFamily: "'Cinzel Decorative', cursive",
-            fontWeight: 700,
-            letterSpacing: "2px"
-          }}
-        >
-          Selamat datang di Astri AI
-        </h2>
+          fontFamily: "'Cinzel Decorative', cursive",
+          fontWeight: 700,
+          letterSpacing: "2px"
+        }}
+      >
+        Selamat datang di Astri AI
+      </h2>
 
       {/* LOGO + NAMA DI TENGAH */}
       <div className="flex flex-col justify-center items-center mt-10">
