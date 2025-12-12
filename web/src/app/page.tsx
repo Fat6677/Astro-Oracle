@@ -43,3 +43,8 @@ export default function HomePage() {
       setIsLoading(false);
     }
   };
+
+  const handleReset = () => {
+    setHoroscope(null);
+    setError(null);
+  };
