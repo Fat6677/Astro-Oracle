@@ -17,7 +17,7 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-   const handleGenerateHoroscope = async (sign: string) => {
+  const handleGenerateHoroscope = async (sign: string) => {
     setIsLoading(true);
     setError(null);
     setHoroscope(null);
@@ -28,7 +28,7 @@ export default function HomePage() {
         headers: {
           'Content-Type': 'application/json',
         },
-         body: JSON.stringify({ sign }),
+        body: JSON.stringify({ sign }),
       });
 
       if (!response.ok) {
@@ -37,9 +37,9 @@ export default function HomePage() {
 
       const data: HoroscopeData = await response.json();
       setHoroscope(data);
-      } catch (err: any) {
+    } catch (err: any) {
       setError(err.message);
-      } finally {
+    } finally {
       setIsLoading(false);
     }
   };
@@ -49,24 +49,37 @@ export default function HomePage() {
     setError(null);
   };
 
-   return (
+  return (
     <div className="min-h-screen flex flex-col">
       <Header />
 
-       <main className="flex-grow">
+      <main className="flex-grow">
         {/* Hero Section dengan Gradien */}
         <div className="bg-gradient-to-br from-purple-100 via-white to-indigo-100">
           <div className="container mx-auto px-6 pt-24 pb-12">
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
+            {/* Konten Utama (Sekarang Mengambil Lebar Penuh) */}
+            <section className="flex flex-col items-center justify-center text-center">
+              {!horoscope && !isLoading && (
+                <>
+                  <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                    Temukan Jalan Anda <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Hari Ini</span>
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-8 max-w-xl">
+                    Pilih zodiak Kamu dan dapatkan wawasan unik dari Astro AI, asisten ramalan harian anda
+                  </p>
+                </>
+              )}
 
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        {isLoading && <p className="text-lg text-gray-500">Sedang berkomunikasi dengan kosmos...</p>}
-        {!horoscope && !isLoading && <ZodiacSelector onSignSelect={handleGenerateHoroscope} isLoading={isLoading} />}
-
-        {horoscope && <HoroscopeCard sign={horoscope.sign} text={horoscope.horoscope} onReset={handleReset} />}
+              {error && <p className="text-red-500 mb-4">{error}</p>}
+              {isLoading && <p className="text-lg text-gray-500">Sedang berkomunikasi dengan kosmos...</p>}
+              {!horoscope && !isLoading && <ZodiacSelector onSignSelect={handleGenerateHoroscope} isLoading={isLoading} />}
+              {horoscope && <HoroscopeCard sign={horoscope.sign} text={horoscope.horoscope} onReset={handleReset} />}
+            </section>
+          </div>
+        </div>
       </main>
 
-       <Footer />
+      <Footer />
     </div>
   );
 }
