@@ -12,13 +12,12 @@ interface HoroscopeData {
 }
 
 
-export default function HeaderWithLogo() {
-  return (  
-    <>
+export default function HomePage() {
+  const [horoscope, setHoroscope] = useState<HoroscopeData | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-      <ZodiacSelector/>
-      <Header />
-      <Footer />
-    </>
-    );
-}
+   const handleGenerateHoroscope = async (sign: string) => {
+    setIsLoading(true);
+    setError(null);
+    setHoroscope(null);
