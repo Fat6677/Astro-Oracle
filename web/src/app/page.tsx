@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 
 
+
 export default function HeaderWithLogo() {
   return (
-    <div className="min-h-screen bg-gray-100">
-
+    <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* HEADER */}
-      <header className="flex justify-between items-center px-6 py-4 bg-blue-600 text-white">
+      <header className="flex justify-between items-center px-6 py-4 bg-[#b032ff] -600 text-white">
         <div className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
           <img src="logo.png" alt="logo" />
         </div>
@@ -48,7 +48,7 @@ export default function HeaderWithLogo() {
 
 
       </div>
-      <footer className="bg-blue-600 text-white py-6 mt-10">
+      <footer className="bg-[#b032ff] -600 text-white py-6 mt-10">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
 
           {/* NAMA APLIKASI */}
