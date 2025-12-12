@@ -34,3 +34,6 @@ export default function HomePage() {
       if (!response.ok) {
         throw new Error('Gagal mendapatkan ramalan.');
       }
+
+      const data: HoroscopeData = await response.json();
+      setHoroscope(data);
