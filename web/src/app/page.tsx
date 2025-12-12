@@ -48,3 +48,7 @@ export default function HomePage() {
     setHoroscope(null);
     setError(null);
   };
+
+   return (
+    <div className="min-h-screen flex flex-col">
+      <Header /
