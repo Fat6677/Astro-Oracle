@@ -39,3 +39,7 @@ export default function HomePage() {
       setHoroscope(data);
       } catch (err: any) {
       setError(err.message);
+      } finally {
+      setIsLoading(false);
+    }
+  };
