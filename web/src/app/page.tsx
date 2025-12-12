@@ -62,3 +62,4 @@ export default function HomePage() {
         )}
 
         {error && <p className="text-red-500 mb-4">{error}</p>}
+        {isLoading && <p className="text-lg text-gray-500">Sedang berkomunikasi dengan kosmos...</p>}
