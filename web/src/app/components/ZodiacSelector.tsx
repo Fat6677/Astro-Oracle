@@ -42,7 +42,7 @@ export default function ZodiacSelector({ onSignSelect, isLoading }: ZodiacSelect
             <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-black text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-4 rounded-xl hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-60 disabled:cursor-not-allowed transition-all transform hover:scale-105"
             >
                 {isLoading ? 'Membuat Ramalan...' : 'Dapatkan Ramalan Saya'}
             </button>
