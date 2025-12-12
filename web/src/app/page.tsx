@@ -60,3 +60,5 @@ export default function HomePage() {
             <p className="text-lg text-gray-600 text-center mb-8">Pilih zodiak Anda dan dapatkan wawasan unik dari Astro AI.</p>
           </>
         )}
+
+        {error && <p className="text-red-500 mb-4">{error}</p>}
