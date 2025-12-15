@@ -62,3 +62,27 @@ export default function SignUpSuccessPage() {
   const handleExplore = () => {
     router.push('/compatibility');
   };
+
+           {/* Success Message */}
+          <h1 className={styles.successTitle}>Selamat Bergabung!</h1>
+          <p className={styles.successMessage}>
+            Akun Anda berhasil dibuat. Perjalanan kosmik Anda dimulai sekarang.
+          </p>
+          
+          {/* User Info */}
+          {userData && (
+            <div className={styles.userInfo}>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Username:</span>
+                <span className={styles.infoValue}>{userData.username}</span>
+              </div>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Email:</span>
+                <span className={styles.infoValue}>{userData.email}</span>
+              </div>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Zodiak:</span>
+                <span className={styles.infoValue}>{userData.zodiac}</span>
+              </div>
+            </div>
+          )}
