@@ -186,3 +186,26 @@ export default function SignUpPage() {
             </div>
           </div>
         </div>
+
+               {/* Main Card */}
+        <div className={styles.signUpCard}>
+          {/* Header */}
+          <div className={styles.headerSection}>
+            <div className={styles.cosmicPortal}>
+              <div className={styles.portalInner}></div>
+              <div className={styles.portalOrbit}></div>
+              <div className={styles.portalGlow}></div>
+            </div>
+            <h1 className={styles.mainTitle}>Mulai Perjalanan Kosmik</h1>
+            <p className={styles.subtitle}>
+              Bergabung dengan Astro Oracles dan temukan takdir Anda
+            </p>
+          </div>
+
+          {/* Progress Bar */}
+          <div className={styles.progressBar}>
+            <div 
+              className={styles.progressFill}
+              style={{ width: formStep === 'basic' ? '50%' : '100%' }}
+            ></div>
+          </div>
