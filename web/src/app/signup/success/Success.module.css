@@ -778,3 +778,48 @@
     height: 70px;
   }
 }
+
+@media (max-width: 480px) {
+  .successCard {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+  
+  .successTitle {
+    font-size: 2rem;
+  }
+  
+  .successMessage {
+    font-size: 1rem;
+  }
+  
+  .successIcon {
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .stepCard {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .stepCard h4 {
+    font-size: 1.2rem;
+  }
+  
+  .stepCard p {
+    font-size: 0.9rem;
+  }
+  
+  .userInfo {
+    padding: 1.5rem;
+  }
+  
+  .infoLabel, .infoValue {
+    font-size: 0.95rem;
+  }
+  
+  .primaryButton, .secondaryButton {
+    padding: 1.1rem;
+    font-size: 1.1rem;
+  }
+}
