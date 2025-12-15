@@ -231,3 +231,48 @@
   margin-right: auto;
   font-weight: 300;
 }
+
+/* User Info */
+.userInfo {
+  background: rgba(30, 25, 60, 0.7);
+  border-radius: 18px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: left;
+  animation: slideUpFade 0.6s ease-out 1s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  color: #d8d8f8;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.infoValue {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: rgba(168, 85, 247, 0.15);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
