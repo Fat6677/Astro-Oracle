@@ -163,3 +163,71 @@
 .particle:nth-child(even) {
   background: #8b5cf6;
 }
+
+/* Set particle positions */
+.particle:nth-child(1) { animation-delay: 0.1s; }
+.particle:nth-child(2) { animation-delay: 0.2s; }
+.particle:nth-child(3) { animation-delay: 0.3s; }
+.particle:nth-child(4) { animation-delay: 0.4s; }
+.particle:nth-child(5) { animation-delay: 0.5s; }
+.particle:nth-child(6) { animation-delay: 0.6s; }
+.particle:nth-child(7) { animation-delay: 0.7s; }
+.particle:nth-child(8) { animation-delay: 0.8s; }
+.particle:nth-child(9) { animation-delay: 0.9s; }
+.particle:nth-child(10) { animation-delay: 1.0s; }
+.particle:nth-child(11) { animation-delay: 1.1s; }
+.particle:nth-child(12) { animation-delay: 1.2s; }
+
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  animation: contentFadeIn 0.8s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.successCard {
+  background: rgba(20, 15, 45, 0.85);
+  backdrop-filter: blur(25px);
+  border-radius: 30px;
+  padding: 3.5rem;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 5.5rem;
+  margin-bottom: 1.8rem;
+  animation: iconFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(216, 180, 254, 0.5));
+}
+
+.successTitle {
+  font-size: 3.2rem;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+}
+
+.successMessage {
+  font-size: 1.3rem;
+  color: #c0c0e0;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+}
