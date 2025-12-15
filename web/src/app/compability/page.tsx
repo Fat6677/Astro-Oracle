@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from './Compatibility.module.css';
+import styles from './compatibility.module.css';
 
 type ZodiacSign = {
   id: number;
