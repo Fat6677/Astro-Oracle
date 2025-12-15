@@ -1,6 +1,5 @@
-/* src/app/login/login.module.css */
+/* src/app/login/Login.module.css */
 
-/* Container utama */
 .astroLoginContainer {
   position: relative;
   width: 100%;
@@ -8,13 +7,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 1.25rem;
   background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
-  color: #fff;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
-/* Latar belakang bintang */
 .starsBackground {
   position: absolute;
   top: 0;
@@ -22,33 +20,32 @@
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 20px 30px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 40px 70px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 60px 20px, #ff69b4, transparent),
-    radial-gradient(3px 3px at 90px 50px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 130px 80px, #ff69b4, transparent),
-    radial-gradient(3px 3px at 160px 30px, #ff69b4, transparent);
+    radial-gradient(0.125rem 0.125rem at 1.25rem 1.875rem, #ff69b4, transparent),
+    radial-gradient(0.125rem 0.125rem at 2.5rem 4.375rem, #ff69b4, transparent),
+    radial-gradient(0.125rem 0.125rem at 3.75rem 1.25rem, #ff69b4, transparent),
+    radial-gradient(0.188rem 0.188rem at 5.625rem 3.125rem, #ff69b4, transparent),
+    radial-gradient(0.125rem 0.125rem at 8.125rem 5rem, #ff69b4, transparent),
+    radial-gradient(0.188rem 0.188rem at 10rem 1.875rem, #ff69b4, transparent);
   background-repeat: repeat;
   z-index: 0;
   opacity: 0.7;
 }
 
-.starsBackground2 {
+.starsBackgroundTwo {
   transform: scale(1.1);
   opacity: 0.5;
-  animation: twinkle 4s infinite alternate;
+  animation: twinkleAnimation 4s infinite alternate;
 }
 
-/* Kartu login */
 .astroLoginCard {
-  background: rgba(10, 10, 42, 0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px;
+  background: rgba(10, 10, 42, 0.9);
+  backdrop-filter: blur(0.625rem);
+  border-radius: 1rem;
+  padding: 2rem;
   width: 100%;
-  max-width: 480px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 105, 180, 0.2);
+  max-width: 420px;
+  box-shadow: 0 0.938rem 2.188rem rgba(0, 0, 0, 0.5);
+  border: 0.063rem solid rgba(255, 105, 180, 0.2);
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -65,124 +62,119 @@
   z-index: -1;
 }
 
-/* Logo */
 .logoContainer {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
 }
 
-/* Placeholder untuk logo/gambar utama - Warna pink sementara */
 .astroLogoPlaceholder {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
   position: relative;
   background: rgba(255, 105, 180, 0.1);
   border-radius: 50%;
-  border: 2px dashed #ff69b4;
+  border: 0.125rem dashed #ff69b4;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Planet pink */
 .planet {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: linear-gradient(145deg, #ff69b4, #ff1493);
   border-radius: 50%;
   position: relative;
   z-index: 2;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+  box-shadow: 0 0 1.25rem rgba(255, 105, 180, 0.7);
 }
 
-/* Orbit */
 .orbit {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 1px dashed rgba(255, 105, 180, 0.5);
+  width: 85px;
+  height: 85px;
+  border: 0.063rem dashed rgba(255, 105, 180, 0.5);
   border-radius: 50%;
-  animation: spin 20s linear infinite;
+  animation: spinAnimation 20s linear infinite;
 }
 
-/* Bintang-bintang kecil */
 .starsSmall {
   position: absolute;
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 15px 15px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 85px 25px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 35px 85px, #ff69b4, transparent),
-    radial-gradient(2px 2px at 75px 75px, #ff69b4, transparent);
+    radial-gradient(0.125rem 0.125rem at 0.938rem 0.938rem, #ff69b4, transparent),
+    radial-gradient(0.125rem 0.125rem at 5.313rem 1.563rem, #ff69b4, transparent),
+    radial-gradient(0.125rem 0.125rem at 2.188rem 5.313rem, #ff69b4, transparent),
+    radial-gradient(0.125rem 0.125rem at 4.688rem 4.688rem, #ff69b4, transparent);
 }
 
-.starsSmall2 {
+.starsSmallTwo {
   transform: rotate(45deg);
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   background: linear-gradient(to right, #ff69b4, #ffb6c1);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  letter-spacing: 3px;
-  margin-bottom: 5px;
+  letter-spacing: 0.188rem;
+  margin-bottom: 0.313rem;
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #b0b0d0;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  letter-spacing: 0.125rem;
+  margin-bottom: 0.625rem;
 }
 
-/* Form */
 .loginForm {
-  margin-top: 30px;
+  margin-top: 1.5rem;
 }
 
 .formGroup {
-  margin-bottom: 25px;
+  margin-bottom: 1.25rem;
 }
 
 .formLabel {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   color: #d0d0f0;
   font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .formInput {
   width: 100%;
-  padding: 15px 20px;
+  padding: 0.75rem 1rem;
   background: rgba(20, 20, 50, 0.7);
-  border: 1px solid rgba(255, 105, 180, 0.3);
-  border-radius: 10px;
-  color: #fff;
-  font-size: 1rem;
-  transition: all 0.3s;
+  border: 0.063rem solid rgba(255, 105, 180, 0.3);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  transition: all 0.2s;
 }
 
 .formInput:focus {
   outline: none;
   border-color: #ff69b4;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  box-shadow: 0 0 0.625rem rgba(255, 105, 180, 0.5);
 }
 
 .formInput::placeholder {
   color: #8888aa;
 }
 
-/* Opsi form */
 .formOptions {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
 }
 
 .checkboxLabel {
@@ -190,181 +182,216 @@
   align-items: center;
   color: #d0d0f0;
   cursor: pointer;
+  gap: 0.5rem;
 }
 
-.checkboxLabel input {
-  margin-right: 8px;
+.checkboxInput {
+  width: 1rem;
+  height: 1rem;
   accent-color: #ff69b4;
+  cursor: pointer;
 }
 
 .forgotLink {
   color: #ff69b4;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  transition: color 0.2s;
 }
 
 .forgotLink:hover {
   text-decoration: underline;
+  color: #ff8bc0;
 }
 
-/* Tombol login */
 .loginButton {
   width: 100%;
-  padding: 16px;
+  padding: 0.875rem;
   background: linear-gradient(to right, #ff69b4, #ff1493);
   border: none;
-  border-radius: 10px;
-  color: white;
-  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.938rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.063rem;
   cursor: pointer;
   transition: all 0.3s;
-  margin-bottom: 25px;
+  margin-bottom: 1.25rem;
 }
 
 .loginButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.5rem 1.25rem rgba(255, 105, 180, 0.3);
 }
 
 .loginButton:active {
   transform: translateY(0);
 }
 
-/* Pembatas */
 .divider {
   display: flex;
   align-items: center;
-  margin: 25px 0;
+  margin: 1.25rem 0;
   color: #8888aa;
+  font-size: 0.875rem;
 }
 
-.divider::before, .divider::after {
+.divider::before,
+.divider::after {
   content: '';
   flex: 1;
-  height: 1px;
+  height: 0.063rem;
   background: rgba(255, 105, 180, 0.3);
 }
 
 .divider span {
-  padding: 0 15px;
-  font-size: 0.9rem;
+  padding: 0 0.938rem;
 }
 
-/* Login sosial */
 .socialLogin {
-  margin-bottom: 25px;
+  margin-bottom: 1.25rem;
 }
 
 .socialText {
   text-align: center;
   color: #b0b0d0;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
+  margin-bottom: 0.938rem;
+  font-size: 0.875rem;
 }
 
 .socialButtons {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  gap: 0.75rem;
 }
 
 .socialButton {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 20px;
+  gap: 0.5rem;
+  padding: 0.75rem;
   background: rgba(20, 20, 50, 0.7);
-  border: 1px solid rgba(255, 105, 180, 0.3);
-  border-radius: 8px;
+  border: 0.063rem solid rgba(255, 105, 180, 0.3);
+  border-radius: 0.5rem;
   color: #d0d0f0;
-  font-size: 0.9rem;
+  font-size: 0.813rem;
   cursor: pointer;
-  transition: all 0.3s;
-  flex: 1;
+  transition: all 0.2s;
 }
 
 .socialButton:hover {
   background: rgba(255, 105, 180, 0.1);
   border-color: #ff69b4;
+  transform: translateY(-0.063rem);
 }
 
-/* Ikon sosial - placeholder warna pink */
 .socialIcon {
-  width: 20px;
-  height: 20px;
-}
-
-.pinkIcon {
+  width: 1rem;
+  height: 1rem;
   background-color: #ff69b4;
   border-radius: 50%;
 }
 
-/* Link pendaftaran */
+.googleButton:hover .socialIcon {
+  background-color: #4285f4;
+}
+
+.facebookButton:hover .socialIcon {
+  background-color: #1877f2;
+}
+
+.twitterButton:hover .socialIcon {
+  background-color: #1da1f2;
+}
+
 .signupLink {
   text-align: center;
   color: #b0b0d0;
-  margin-top: 20px;
-  font-size: 0.9rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
 }
 
 .signupLink a {
   color: #ff69b4;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s;
 }
 
 .signupLink a:hover {
   text-decoration: underline;
+  color: #ff8bc0;
 }
 
-/* Footer */
 .footer {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 105, 180, 0.2);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 0.063rem solid rgba(255, 105, 180, 0.2);
   text-align: center;
   color: #8888aa;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .footer p {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .footer a {
   color: #ff69b4;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .footer a:hover {
   text-decoration: underline;
+  color: #ff8bc0;
 }
 
-/* Animasi */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes spinAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes twinkle {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.7; }
+@keyframes twinkleAnimation {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
-/* Responsif */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .astroLoginCard {
-    padding: 30px 20px;
+    padding: 1.5rem;
+    max-width: 360px;
   }
   
   .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .socialButtons {
     flex-direction: column;
+  }
+  
+  .astroLogoPlaceholder {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .planet {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .orbit {
+    width: 75px;
+    height: 75px;
   }
 }
