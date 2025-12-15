@@ -330,3 +330,139 @@ export default function SignUpPage() {
     </div>
   );
 }
+
+// Basic Info Step Component
+function BasicInfoStep({ 
+  formData, 
+  errors, 
+  passwordStrength, 
+  onChange 
+}: { 
+  formData: SignUpFormData;
+  errors: Partial<SignUpFormData>;
+  passwordStrength: number;
+  onChange: (field: keyof SignUpFormData, value: string | boolean) => void;
+}) {
+  return (
+    <div className={styles.formStep}>
+      <div className={styles.inputGrid}>
+        <div className={styles.inputGroup}>
+          <label htmlFor="username" className={styles.inputLabel}>
+            <span className={styles.labelIcon}>👤</span>
+            Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            className={`${styles.formInput} ${errors.username ? styles.inputError : ''}`}
+            placeholder="pilih nama kosmik Anda"
+            value={formData.username}
+            onChange={(e) => onChange('username', e.target.value)}
+          />
+          {errors.username && (
+            <div className={styles.errorMessage}>{errors.username}</div>
+          )}
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="email" className={styles.inputLabel}>
+            <span className={styles.labelIcon}>✉️</span>
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            className={`${styles.formInput} ${errors.email ? styles.inputError : ''}`}
+            placeholder="alamat.email@domain.com"
+            value={formData.email}
+            onChange={(e) => onChange('email', e.target.value)}
+          />
+          {errors.email && (
+            <div className={styles.errorMessage}>{errors.email}</div>
+          )}
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="birthDate" className={styles.inputLabel}>
+            <span className={styles.labelIcon}>🎂</span>
+            Tanggal Lahir
+          </label>
+          <input
+            type="date"
+            id="birthDate"
+            className={`${styles.formInput} ${errors.birthDate ? styles.inputError : ''}`}
+            value={formData.birthDate}
+            onChange={(e) => onChange('birthDate', e.target.value)}
+          />
+          {errors.birthDate && (
+            <div className={styles.errorMessage}>{errors.birthDate}</div>
+          )}
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="password" className={styles.inputLabel}>
+            <span className={styles.labelIcon}>🔒</span>
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            className={`${styles.formInput} ${errors.password ? styles.inputError : ''}`}
+            placeholder="minimal 8 karakter"
+            value={formData.password}
+            onChange={(e) => onChange('password', e.target.value)}
+          />
+          
+          {/* Password Strength Meter */}
+          <div className={styles.strengthMeter}>
+            <div 
+              className={`${styles.strengthBar} ${
+                passwordStrength >= 25 ? styles.weak : ''
+              } ${
+                passwordStrength >= 50 ? styles.fair : ''
+              } ${
+                passwordStrength >= 75 ? styles.good : ''
+              } ${
+                passwordStrength === 100 ? styles.strong : ''
+              }`}
+              style={{ width: `${passwordStrength}%` }}
+            ></div>
+            <div className={styles.strengthLabel}>
+              {passwordStrength === 0 ? 'Tidak ada' : ''}
+              {passwordStrength > 0 && passwordStrength < 50 ? 'Lemah' : ''}
+              {passwordStrength >= 50 && passwordStrength < 75 ? 'Cukup' : ''}
+              {passwordStrength >= 75 && passwordStrength < 100 ? 'Baik' : ''}
+              {passwordStrength === 100 ? 'Sangat Kuat' : ''}
+            </div>
+          </div>
+          
+          {errors.password && (
+            <div className={styles.errorMessage}>{errors.password}</div>
+          )}
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="confirmPassword" className={styles.inputLabel}>
+            <span className={styles.labelIcon}>✅</span>
+            Konfirmasi Password
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            className={`${styles.formInput} ${errors.confirmPassword ? styles.inputError : ''}`}
+            placeholder="ulangi password Anda"
+            value={formData.confirmPassword}
+            onChange={(e) => onChange('confirmPassword', e.target.value)}
+          />
+          {errors.confirmPassword && (
+            <div className={styles.errorMessage}>{errors.confirmPassword}</div>
+          )}
+          {formData.password && formData.confirmPassword && 
+           formData.password === formData.confirmPassword && (
+            <div className={styles.successMessage}>✓ Password cocok</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
