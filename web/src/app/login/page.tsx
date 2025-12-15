@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './login.module.css';
+import styles from './Login.module.css';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
@@ -17,19 +17,16 @@ export default function LoginPage() {
 
   return (
     <div className={styles.astroLoginContainer}>
-      {/* Background dengan pola bintang */}
       <div className={styles.starsBackground}></div>
-      <div className={`${styles.starsBackground} ${styles.starsBackground2}`}></div>
+      <div className={`${styles.starsBackground} ${styles.starsBackgroundTwo}`}></div>
       
       <div className={styles.astroLoginCard}>
-        {/* Logo/gambar utama - sementara menggunakan warna pink */}
         <div className={styles.logoContainer}>
-          {/* Untuk gambar asli: <img src="/path-to-astro-logo.png" alt="Astro Oracles Logo" className={styles.astroLogo} /> */}
           <div className={styles.astroLogoPlaceholder}>
             <div className={styles.planet}></div>
             <div className={styles.orbit}></div>
             <div className={styles.starsSmall}></div>
-            <div className={`${styles.starsSmall} ${styles.starsSmall2}`}></div>
+            <div className={`${styles.starsSmall} ${styles.starsSmallTwo}`}></div>
           </div>
           <h1 className={styles.title}>ASTRO ORACLES</h1>
           <p className={styles.subtitle}>Unlock Your Cosmic Destiny</p>
@@ -71,11 +68,14 @@ export default function LoginPage() {
               <input
                 type="checkbox"
                 checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                className={styles.checkboxInput}
               />
               <span>Remember me</span>
             </label>
-            <a href="#forgot" className={styles.forgotLink}>Forgot password?</a>
+            <a href="#" className={styles.forgotLink} onClick={(e) => e.preventDefault()}>
+              Forgot password?
+            </a>
           </div>
 
           <button type="submit" className={styles.loginButton}>
@@ -89,35 +89,49 @@ export default function LoginPage() {
           <div className={styles.socialLogin}>
             <p className={styles.socialText}>Connect with your celestial profile</p>
             <div className={styles.socialButtons}>
-              {/* Untuk gambar asli: <img src="/path-to-google-icon.png" alt="Google" /> */}
-              <button type="button" className={`${styles.socialButton} ${styles.google}`}>
-                <div className={`${styles.socialIcon} ${styles.pinkIcon}`}></div>
+              <button 
+                type="button" 
+                className={`${styles.socialButton} ${styles.googleButton}`}
+                onClick={() => console.log('Google login clicked')}
+              >
+                <div className={styles.socialIcon}></div>
                 Google
               </button>
               
-              {/* Untuk gambar asli: <img src="/path-to-facebook-icon.png" alt="Facebook" /> */}
-              <button type="button" className={`${styles.socialButton} ${styles.facebook}`}>
-                <div className={`${styles.socialIcon} ${styles.pinkIcon}`}></div>
+              <button 
+                type="button" 
+                className={`${styles.socialButton} ${styles.facebookButton}`}
+                onClick={() => console.log('Facebook login clicked')}
+              >
+                <div className={styles.socialIcon}></div>
                 Facebook
               </button>
               
-              {/* Untuk gambar asli: <img src="/path-to-twitter-icon.png" alt="Twitter" /> */}
-              <button type="button" className={`${styles.socialButton} ${styles.twitter}`}>
-                <div className={`${styles.socialIcon} ${styles.pinkIcon}`}></div>
+              <button 
+                type="button" 
+                className={`${styles.socialButton} ${styles.twitterButton}`}
+                onClick={() => console.log('Twitter login clicked')}
+              >
+                <div className={styles.socialIcon}></div>
                 Twitter
               </button>
             </div>
           </div>
 
           <p className={styles.signupLink}>
-            Don&apos;t have a cosmic account? <a href="#signup">Sign up now</a>
+            Don&apos;t have a cosmic account?{' '}
+            <a href="#" onClick={(e) => e.preventDefault()}>
+              Sign up now
+            </a>
           </p>
         </form>
 
         <div className={styles.footer}>
           <p>© 2023 Astro Oracles. All cosmic rights reserved.</p>
           <p>
-            <a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Terms of Service</a>
+            {' | '}
+            <a href="#" onClick={(e) => e.preventDefault()}>Privacy Policy</a>
           </p>
         </div>
       </div>
