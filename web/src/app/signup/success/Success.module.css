@@ -661,3 +661,120 @@
     left: 100%;
   }
 }
+
+/* Custom properties for particle explosion */
+:root {
+  --tx-1: 120px; --ty-1: -120px;
+  --tx-2: 140px; --ty-2: 0px;
+  --tx-3: 120px; --ty-3: 120px;
+  --tx-4: 0px; --ty-4: 140px;
+  --tx-5: -120px; --ty-5: 120px;
+  --tx-6: -140px; --ty-6: 0px;
+  --tx-7: -120px; --ty-7: -120px;
+  --tx-8: 0px; --ty-8: -140px;
+  --tx-9: 85px; --ty-9: -85px;
+  --tx-10: 85px; --ty-10: 85px;
+  --tx-11: -85px; --ty-11: 85px;
+  --tx-12: -85px; --ty-12: -85px;
+}
+
+/* Apply custom properties to particles */
+.particle:nth-child(1) { --tx: var(--tx-1); --ty: var(--ty-1); }
+.particle:nth-child(2) { --tx: var(--tx-2); --ty: var(--ty-2); }
+.particle:nth-child(3) { --tx: var(--tx-3); --ty: var(--ty-3); }
+.particle:nth-child(4) { --tx: var(--tx-4); --ty: var(--ty-4); }
+.particle:nth-child(5) { --tx: var(--tx-5); --ty: var(--ty-5); }
+.particle:nth-child(6) { --tx: var(--tx-6); --ty: var(--ty-6); }
+.particle:nth-child(7) { --tx: var(--tx-7); --ty: var(--ty-7); }
+.particle:nth-child(8) { --tx: var(--tx-8); --ty: var(--ty-8); }
+.particle:nth-child(9) { --tx: var(--tx-9); --ty: var(--ty-9); }
+.particle:nth-child(10) { --tx: var(--tx-10); --ty: var(--ty-10); }
+.particle:nth-child(11) { --tx: var(--tx-11); --ty: var(--ty-11); }
+.particle:nth-child(12) { --tx: var(--tx-12); --ty: var(--ty-12); }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .successCard {
+    padding: 2.5rem 2rem;
+  }
+  
+  .successTitle {
+    font-size: 2.8rem;
+  }
+  
+  .successMessage {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .successContainer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .successCard {
+    padding: 2rem 1.5rem;
+    border-radius: 24px;
+  }
+  
+  .successTitle {
+    font-size: 2.4rem;
+  }
+  
+  .successMessage {
+    font-size: 1.1rem;
+  }
+  
+  .successIcon {
+    font-size: 4.5rem;
+  }
+  
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .infoItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.8rem 0;
+  }
+  
+  .infoValue {
+    min-width: 100%;
+    text-align: left;
+  }
+  
+  .welcomeGift {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .successAnimation {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .successOrbit {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .successCore {
+    width: 70px;
+    height: 70px;
+  }
+}
