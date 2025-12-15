@@ -142,7 +142,7 @@ export default function ForgotPasswordPage() {
 
                 {/* Footer */}
                 <footer className={styles.footer}>
-                    <p>© 2023 Astro Oracles • Password Recovery</p>
+                    <p>© 2025 Astro Oracles • Password Recovery</p>
                     <p className={styles.securityNote}>
                         ⚡ Tautan reset akan kedaluwarsa dalam 1 jam untuk keamanan
                     </p>
