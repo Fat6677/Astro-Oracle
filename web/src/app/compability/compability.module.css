@@ -818,3 +818,17 @@
   }
 }
 
+@media (max-width: 480px) {
+  .zodiacGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resultCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .connectionOrbit {
+    width: 140px;
+    height: 140px;
+  }
+}
