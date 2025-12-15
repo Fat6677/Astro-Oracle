@@ -227,3 +227,41 @@ export default function SignUpPage() {
                 onBack={handlePreviousStep}
               />
             )}
+
+                        {/* Navigation Buttons */}
+            <div className={styles.formNavigation}>
+              {formStep === 'basic' ? (
+                <button
+                  type="button"
+                  className={styles.nextButton}
+                  onClick={handleNextStep}
+                >
+                  Lanjut ke Profil Kosmik →
+                </button>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    className={styles.backStepButton}
+                    onClick={handlePreviousStep}
+                  >
+                    ← Kembali
+                  </button>
+                  <button
+                    type="submit"
+                    className={styles.submitButton}
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <>
+                        <span className={styles.loadingSpinner}></span>
+                        Membuat Akun...
+                      </>
+                    ) : (
+                      'Selesaikan Pendaftaran ✨'
+                    )}
+                  </button>
+                </>
+              )}
+            </div>
+          </form>
