@@ -70,3 +70,44 @@ export default function ForgotPasswordPage() {
               Masukkan email Anda untuk menerima tautan reset password
             </p>
           </div>
+
+            {/* Conditional Rendering */}
+          {!isSubmitted ? (
+            <form className={styles.formSection} onSubmit={handleSubmit}>
+              {/* Email Input */}
+              <div className={styles.inputGroup}>
+                <label htmlFor="email" className={styles.inputLabel}>
+                  Email Address
+                </label>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type="email"
+                    id="email"
+                    className={styles.emailInput}
+                    placeholder="your.cosmic@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <div className={styles.inputIcon}>✉️</div>
+                </div>
+                <p className={styles.inputHint}>
+                  Kami akan mengirim tautan reset ke email Anda
+                </p>
+              </div>
+
+               {/* Submit Button */}
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isLoading || !email}
+              >
+                {isLoading ? (
+                  <>
+                    <span className={styles.loadingSpinner}></span>
+                    Mengirim Tautan...
+                  </>
+                ) : (
+                  'Kirim Tautan Reset'
+                )}
+              </button>
