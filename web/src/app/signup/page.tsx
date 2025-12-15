@@ -147,3 +147,42 @@ export default function SignUpPage() {
       router.push('/signup/success');
     }, 2000);
   };
+
+    const handleLoginRedirect = () => {
+    router.push('/login');
+  };
+
+  return (
+    <div className={styles.signUpContainer}>
+      {/* Background Elements */}
+      <div className={styles.cosmicBackground}></div>
+      <div className={styles.nebulaEffect}></div>
+      <div className={styles.floatingStars}></div>
+      <div className={styles.floatingConstellations}></div>
+      
+      {/* Decorative Planets */}
+      <div className={styles.planetOne}></div>
+      <div className={styles.planetTwo}></div>
+      <div className={styles.planetThree}></div>
+
+      <div className={styles.contentWrapper}>
+        {/* Navigation */}
+        <div className={styles.navigation}>
+          <button 
+            className={styles.backButton}
+            onClick={handleLoginRedirect}
+          >
+            ← Sudah punya akun? Login
+          </button>
+          <div className={styles.stepsIndicator}>
+            <div className={`${styles.step} ${formStep === 'basic' ? styles.active : ''}`}>
+              <div className={styles.stepNumber}>1</div>
+              <span className={styles.stepLabel}>Data Dasar</span>
+            </div>
+            <div className={styles.stepLine}></div>
+            <div className={`${styles.step} ${formStep === 'zodiac' ? styles.active : ''}`}>
+              <div className={styles.stepNumber}>2</div>
+              <span className={styles.stepLabel}>Profil Kosmik</span>
+            </div>
+          </div>
+        </div>
