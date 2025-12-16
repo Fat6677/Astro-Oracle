@@ -275,3 +275,21 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Zodiac Carousel */}
+        <div className={styles.zodiacCarousel}>
+          <div className={styles.carouselTrack}>
+            {[...zodiacSigns, ...zodiacSigns].map((sign, index) => (
+              <div 
+                key={index} 
+                className={styles.zodiacCard}
+                style={{ animationDelay: `${index * 0.5}s` }}
+              >
+                <div className={styles.zodiacSymbol}>{sign.symbol}</div>
+                <div className={styles.zodiacName}>{sign.name}</div>
+                <div className={styles.zodiacDate}>{sign.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
