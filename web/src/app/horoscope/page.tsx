@@ -345,3 +345,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaContent}>
+          <div className={styles.ctaOrb}>
+            <div className={styles.ctaOrbInner}></div>
+            <div className={styles.ctaOrbRing}></div>
+          </div>
+
+          <h2 className={styles.ctaTitle}>
+            Siap Mulai Perjalanan <span className={styles.ctaHighlight}>Kosmik</span> Anda?
+          </h2>
+
+          <p className={styles.ctaDescription}>
+            Bergabunglah dengan komunitas astrologi terbesar dan temukan 
+            takdir sejati Anda bersama ribuan pengguna lainnya.
+          </p>
+
+          <div className={styles.ctaButtons}>
+            <button 
+              className={styles.ctaPrimary}
+              onClick={handleSignUp}
+            >
+              Daftar Sekarang Gratis
+            </button>
+            <button 
+              className={styles.ctaSecondary}
+              onClick={() => router.push('/demo')}
+            >
+              Coba Demo
+            </button>
+          </div>
+        </div>
+      </section>
+
