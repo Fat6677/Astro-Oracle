@@ -153,3 +153,125 @@ export default function HomePage() {
     });
   };
 
+  return (
+    <div className={styles.homeContainer}>
+      {/* Background Elements */}
+      <div className={styles.cosmicBackground}></div>
+      <div className={styles.nebulaOverlay}></div>
+      <div className={styles.floatingStars}></div>
+      <div className={styles.floatingPlanets}>
+        <div className={styles.planet}></div>
+        <div className={styles.planet2}></div>
+        <div className={styles.planet3}></div>
+      </div>
+
+      {/* Progress Bar */}
+      <div className={styles.progressBar}>
+        <div 
+          className={styles.progressFill}
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
+
+      {/* Navigation */}
+      <nav className={styles.navbar}>
+        <div className={styles.navLogo}>
+          <div className={styles.logoOrb}>
+            <div className={styles.orbCore}></div>
+            <div className={styles.orbRing}></div>
+          </div>
+          <span className={styles.logoText}>ASTRO ORACLES</span>
+        </div>
+
+        <div className={styles.navButtons}>
+          <button 
+            className={styles.navButton}
+            onClick={() => router.push('/about')}
+          >
+            Tentang Kami
+          </button>
+          <button 
+            className={styles.navButton}
+            onClick={scrollToFeatures}
+          >
+            Fitur
+          </button>
+          <button 
+            className={styles.navButton}
+            onClick={() => router.push('/pricing')}
+          >
+            Premium
+          </button>
+          <button 
+            className={styles.loginButton}
+            onClick={handleLogin}
+          >
+            Masuk
+          </button>
+          <button 
+            className={styles.signupButton}
+            onClick={handleSignUp}
+          >
+            Daftar Gratis
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>
+            <span className={styles.badgeText}>✨ Portal Kosmik Terbuka</span>
+          </div>
+
+          <h1 className={styles.heroTitle}>
+            Temukan Takdir Anda di{' '}
+            <span className={styles.titleHighlight}>Dunia Astrologi</span>
+          </h1>
+
+          <p className={styles.heroSubtitle}>
+            Jelajahi rahasia bintang, pahami hubungan, dan temukan potensi terbaik Anda 
+            dengan panduan astrologi yang personal dan akurat.
+          </p>
+
+          <div className={styles.heroStats}>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>50K+</div>
+              <div className={styles.statLabel}>Pengguna Aktif</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>12</div>
+              <div className={styles.statLabel}>Zodiak Lengkap</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>99%</div>
+              <div className={styles.statLabel}>Kepuasan</div>
+            </div>
+          </div>
+
+          <div className={styles.heroActions}>
+            <button 
+              className={styles.primaryAction}
+              onClick={handleSignUp}
+            >
+              Mulai Perjalanan Kosmik
+            </button>
+            <button 
+              className={styles.secondaryAction}
+              onClick={scrollToFeatures}
+            >
+              Jelajahi Fitur
+              <span className={styles.actionArrow}>→</span>
+            </button>
+          </div>
+
+          {/* Current Time Display */}
+          <div className={styles.timeDisplay}>
+            <div className={styles.timeIcon}>🕒</div>
+            <div className={styles.timeContent}>
+              <div className={styles.timeLabel}>Waktu Kosmik Saat Ini</div>
+              <div className={styles.timeValue}>{currentTime}</div>
+            </div>
+          </div>
+        </div>
+
