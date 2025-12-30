@@ -48,3 +48,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginRight: 8,
   },
+
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    letterSpacing: -0.5,
+    color: '#000',
+  },
