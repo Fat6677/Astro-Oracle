@@ -39,4 +39,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderLeftWidth: 4 
   },  
+  icon: { fontSize: 24, marginBottom: 10 },
+  cardTitle: { color: '#FFF', fontWeight: 'bold', fontSize: 14 },
+  cardDesc: { color: '#9CA3AF', fontSize: 11, marginTop: 5 }
+  
 });
