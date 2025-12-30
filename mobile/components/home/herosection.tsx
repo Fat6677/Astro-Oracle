@@ -16,3 +16,10 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
         <Text style={styles.timeLabel}>Waktu Kosmik</Text>
         <Text style={styles.timeValue}>{currentTime}</Text>
       </View>
+
+      <TouchableOpacity style={styles.button} onPress={onStart}>
+        <Text style={styles.buttonText}>Mulai Perjalanan</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
