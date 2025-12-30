@@ -60,3 +60,8 @@ const styles = StyleSheet.create({
     color: '#6B7280',
     display: Platform.OS === 'web' ? 'flex' : 'none', 
   },
+  borderBottom: {
+    height: 1,
+    backgroundColor: 'rgba(229, 231, 235, 0.5)',
+  }
+});
