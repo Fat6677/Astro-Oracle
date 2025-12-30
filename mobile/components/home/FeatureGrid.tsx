@@ -27,3 +27,7 @@ export const FeatureGrid = ({ onFeaturePress }: { onFeaturePress: (path: string)
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+    
+});
