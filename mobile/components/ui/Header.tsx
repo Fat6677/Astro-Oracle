@@ -31,3 +31,11 @@ const styles = StyleSheet.create({
     zIndex: 50,
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
+
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+  },
