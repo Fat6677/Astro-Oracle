@@ -11,3 +11,8 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
       <Text style={styles.title}>
         Temukan Takdir Anda di <Text style={styles.highlight}>Dunia Astrologi</Text>
       </Text>
+
+      <View style={styles.timeCard}>
+        <Text style={styles.timeLabel}>Waktu Kosmik</Text>
+        <Text style={styles.timeValue}>{currentTime}</Text>
+      </View>
