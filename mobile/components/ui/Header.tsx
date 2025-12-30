@@ -55,3 +55,8 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
     color: '#000',
   },
+  subtitle: {
+    fontSize: 12,
+    color: '#6B7280',
+    display: Platform.OS === 'web' ? 'flex' : 'none', 
+  },
