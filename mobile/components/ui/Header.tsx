@@ -39,3 +39,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 16,
   },
+
+  logoWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
