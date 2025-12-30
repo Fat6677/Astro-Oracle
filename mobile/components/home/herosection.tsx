@@ -30,4 +30,5 @@ const styles = StyleSheet.create({
  badgeText: { color: '#A855F7', fontSize: 12, fontWeight: 'bold' },   
  title: { fontSize: 32, fontWeight: 'bold', color: '#FFF', textAlign: 'center', marginTop: 20 },
  highlight: { color: '#8B5CF6' },
+ timeCard: { backgroundColor: 'rgba(255,255,255,0.05)', padding: 15, borderRadius: 15, marginVertical: 20, width: '100%', alignItems: 'center' },
 });
