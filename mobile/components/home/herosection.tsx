@@ -32,4 +32,7 @@ const styles = StyleSheet.create({
  highlight: { color: '#8B5CF6' },
  timeCard: { backgroundColor: 'rgba(255,255,255,0.05)', padding: 15, borderRadius: 15, marginVertical: 20, width: '100%', alignItems: 'center' },
  timeLabel: { color: '#9CA3AF', fontSize: 12 },
+ timeValue: { color: '#FFF', fontSize: 24, fontWeight: '600' },
+ button: { backgroundColor: '#8B5CF6', paddingHorizontal: 40, paddingVertical: 15, borderRadius: 30 },
+ buttonText: { color: '#FFF', fontWeight: 'bold', fontSize: 16 }
 });
