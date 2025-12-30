@@ -13,3 +13,17 @@ export const FeatureGrid = ({ onFeaturePress }: { onFeaturePress: (path: string)
       <Text style={styles.cardDesc} numberOfLines={2}>{item.description}</Text>
     </TouchableOpacity>
   );
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.sectionTitle}>Fitur Eksklusif</Text>
+      <FlatList
+        data={features}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        numColumns={2}
+        scrollEnabled={false} 
+      />
+    </View>
+  );
+};
