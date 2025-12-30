@@ -1,37 +1,31 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
-import { useColorScheme } from 'react-native';
-
-
+import { Tabs } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons'; 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  const theme = colorScheme === 'dark' ? MD3DarkTheme : MD3LightTheme;
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: theme.colors.primary,
-        tabBarInactiveTintColor: theme.colors.onSurfaceVariant,
-        headerShown: false,
+        headerShown: false, 
         tabBarStyle: {
-          backgroundColor: theme.colors.background,
+          backgroundColor: '#0F172A', 
+          borderTopColor: '#1E293B',
+          height: 60,
+          paddingBottom: 10,
         },
-        tabBarButton: HapticTab,
-      }}>
+        tabBarActiveTintColor: '#8B5CF6', 
+        tabBarInactiveTintColor: '#94A3B8', 
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="index" // Merujuk ke index.tsx (Home)
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="planet-outline" size={size} color={color} />
+          ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+      
     </Tabs>
   );
 }
