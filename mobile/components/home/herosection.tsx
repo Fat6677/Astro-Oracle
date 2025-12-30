@@ -23,3 +23,7 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+ container: { padding: 20, alignItems: 'center', marginTop: 40 }   
+});
