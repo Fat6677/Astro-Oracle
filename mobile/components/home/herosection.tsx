@@ -29,4 +29,5 @@ const styles = StyleSheet.create({
  badge: { backgroundColor: '#2D1B4E', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20 },
  badgeText: { color: '#A855F7', fontSize: 12, fontWeight: 'bold' },   
  title: { fontSize: 32, fontWeight: 'bold', color: '#FFF', textAlign: 'center', marginTop: 20 },
+ highlight: { color: '#8B5CF6' },
 });
