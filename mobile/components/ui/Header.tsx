@@ -21,3 +21,13 @@ export default function Header() {
     </BlurView>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 50,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  },
