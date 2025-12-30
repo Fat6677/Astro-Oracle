@@ -7,3 +7,7 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
       <View style={styles.badge}>
         <Text style={styles.badgeText}> Portal Kosmik Terbuka</Text>
       </View>
+
+      <Text style={styles.title}>
+        Temukan Takdir Anda di <Text style={styles.highlight}>Dunia Astrologi</Text>
+      </Text>
