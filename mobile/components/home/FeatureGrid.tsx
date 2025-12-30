@@ -29,5 +29,6 @@ export const FeatureGrid = ({ onFeaturePress }: { onFeaturePress: (path: string)
 };
 
 const styles = StyleSheet.create({
-    
+  container: { padding: 20 },
+  sectionTitle: { fontSize: 20, fontWeight: 'bold', color: '#FFF', marginBottom: 15 },  
 });
