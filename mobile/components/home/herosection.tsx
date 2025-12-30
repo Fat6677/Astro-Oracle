@@ -25,5 +25,6 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
 };
 
 const styles = StyleSheet.create({
- container: { padding: 20, alignItems: 'center', marginTop: 40 }   
+ container: { padding: 20, alignItems: 'center', marginTop: 40 },
+ badge: { backgroundColor: '#2D1B4E', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20 },   
 });
