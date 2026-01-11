@@ -4,8 +4,8 @@ import {
   TextInputProps,
   HelperText,
 } from 'react-native-paper';
-import { View, StyleSheet } from 'react-native';
-import { CosmicColors } from '../../theme/CosmicColors';
+import { View, StyleSheet, Text } from 'react-native';
+import { CosmicColors } from '../../constants/CosmicColors';
 
 interface CosmicInputProps extends TextInputProps {
   label: string;
@@ -31,9 +31,7 @@ const CosmicInput: React.FC<CosmicInputProps> = ({
 
   return (
     <View style={styles.container}>
-      <Text
-        style={[styles.label, { color: CosmicColors.light }]}
-      >
+        <Text style={[styles.label, { color: getVariantColor() }]}>
         {label}
       </Text>
       <TextInput
