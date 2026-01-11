@@ -13,7 +13,7 @@ import LoginHeader from '../../components/Auth/LoginHeader';
 import AuthCard from '../../components/Auth/AuthCard';
 import LoginForm from '../../components/Auth/LoginForm';
 import SocialLogin from '../../components/Auth/SocialLogin';
-import CosmicButton from '../../components/Common/CosmicButton.tsx';
+import CosmicButton from '../../components/Common/CosmicButton';
 import { CosmicColors } from '../../constants/CosmicColors';
 
 export default function LoginScreen() {
@@ -43,12 +43,12 @@ export default function LoginScreen() {
 
   const handleForgotPassword = () => {
     console.log('Forgot password pressed');
-    router.push('/(auth)/forgot-password'); // Jika ada halaman forgot password
+    router.push('../(auth)/forgot-password'); // Jika ada halaman forgot password
   };
 
   const handleSignUp = () => {
     console.log('Sign up pressed');
-    router.push('/(auth)/register'); // Navigate to register
+    router.push('../(auth)/register'); // Navigate to register
   };
 
   return (
@@ -85,7 +85,7 @@ export default function LoginScreen() {
               
               <View style={styles.signupContainer}>
                 <Text style={styles.signupText}>
-                  Don't have a cosmic account?{' '}
+                  Dont have a cosmic account?{' '}
                 </Text>
                 <TouchableOpacity onPress={handleSignUp}>
                   <Text style={styles.signupLink}>Sign up now</Text>
