@@ -3,6 +3,7 @@ import {
   TextInput,
   TextInputProps,
   HelperText,
+  TextInputIconProps,
 } from 'react-native-paper';
 import { View, StyleSheet, Text } from 'react-native';
 import { CosmicColors } from '../../constants/CosmicColors';
@@ -13,6 +14,8 @@ interface CosmicInputProps extends TextInputProps {
   errorMessage?: string;
   leftIcon?: string;
   rightIcon?: string;
+  onRightIconPress?: () => void; // ← TAMBAHKAN INI
+  onLeftIconPress?: () => void;  // ← TAMBAHKAN INI JUGA
 }
 
 const CosmicInput: React.FC<CosmicInputProps> = ({
@@ -21,6 +24,8 @@ const CosmicInput: React.FC<CosmicInputProps> = ({
   errorMessage,
   leftIcon,
   rightIcon,
+  onRightIconPress,
+  onLeftIconPress,
   ...props
 }) => {
   const getVariantColor = () => {
@@ -31,7 +36,7 @@ const CosmicInput: React.FC<CosmicInputProps> = ({
 
   return (
     <View style={styles.container}>
-        <Text style={[styles.label, { color: getVariantColor() }]}>
+      <Text style={[styles.label, { color: CosmicColors.light }]}>
         {label}
       </Text>
       <TextInput
@@ -53,10 +58,19 @@ const CosmicInput: React.FC<CosmicInputProps> = ({
               icon={leftIcon}
               color={getVariantColor()}
               size={24}
+              onPress={onLeftIconPress}
             />
           )
         }
-        right={rightIcon && <TextInput.Icon icon={rightIcon} />}
+        right={
+          rightIcon && (
+            <TextInput.Icon
+              icon={rightIcon}
+              color={CosmicColors.light}
+              onPress={onRightIconPress}
+            />
+          )
+        }
         {...props}
       />
       {errorMessage && (

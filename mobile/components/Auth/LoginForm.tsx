@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import CosmicInput from '../Common/CosmicInput';
-import CosmicCheckbox from '../Common/CosmicCheckbox';
-import { CosmicColors } from '../../theme/CosmicColors';
+import CosmicCheckbox from '../Common/CosmicCheck';
+import { CosmicColors } from '../../constants/CosmicColors';
 
 interface LoginFormProps {
   onSubmit: (data: { username: string; password: string; rememberMe: boolean }) => void;
