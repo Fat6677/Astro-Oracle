@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Surface, StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
+import { Surface} from 'react-native-paper';
 import { CosmicColors } from '../../constants/CosmicColors';
 
 interface AuthCardProps {
