@@ -13,7 +13,7 @@ import LoginHeader from '../../components/Auth/LoginHeader';
 import AuthCard from '../../components/Auth/AuthCard';
 import LoginForm from '../../components/Auth/LoginForm';
 import SocialLogin from '../../components/Auth/SocialLogin';
-import CosmicButton from '../../components/Common/CosmicButton';
+import CosmicButton from '../../components/Common/CosmicButton.tsx';
 import { CosmicColors } from '../../constants/CosmicColors';
 
 export default function LoginScreen() {
