@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ButtonProps } from 'react-native-paper';
 import { StyleSheet, ViewStyle } from 'react-native';
-import { CosmicColors } from '../../theme/CosmicColors';
+import { CosmicColors } from '../../constants/CosmicColors';
 
 interface CosmicButtonProps extends ButtonProps {
   cosmicVariant?: 'primary' | 'secondary' | 'accent';
