@@ -17,7 +17,7 @@ export default function RegisterScreen() {
             Cosmic registration features are being developed by our star engineers.
           </Text>
           
-          <Link href="/(auth)/login" style={styles.backLink}>
+          <Link href="../(auth)/login" style={styles.backLink}>
             Back to Login
           </Link>
         </View>

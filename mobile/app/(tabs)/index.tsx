@@ -9,7 +9,7 @@ export default function HomeScreen() {
   useEffect(() => {
     // Redirect ke login saat pertama kali buka app
     const timer = setTimeout(() => {
-      router.replace('/(auth)/login');
+      router.replace('../(auth)/login');
     }, 1000);
 
     return () => clearTimeout(timer);
