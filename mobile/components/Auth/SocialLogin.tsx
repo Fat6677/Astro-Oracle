@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { IconButton } from 'react-native-paper';
-import { CosmicColors } from '../../theme/CosmicColors';
+import { CosmicColors } from '../../constants/CosmicColors';
 
 interface SocialPlatform {
   id: string;
