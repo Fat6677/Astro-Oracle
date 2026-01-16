@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onStart: () => void }) => {
   const router = useRouter();
@@ -20,7 +21,7 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
 
      <TouchableOpacity 
         style={styles.button} 
-        onPress={() => router.push('/chat')}
+        onPress={() => router.push('/(tabs)/chat' as any)}
       >
         <Text style={styles.buttonText}>Mulai Perjalanan</Text>
       </TouchableOpacity>
