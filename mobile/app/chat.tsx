@@ -13,3 +13,15 @@ const [messages, setMessages] = useState<Message[]>([
   { id: '1', text: 'Selamat datang di Portal Kosmik. Saya Astra Oracle...', sender: 'ai' }
 ]);
 const [inputText, setInputText] = useState('');
+
+const sendMessage = () => {
+  if (inputText.trim() === '') return;
+  const userMsg: Message = { id: Date.now().toString(), text: inputText, sender: 'user' };
+  setMessages(prev => [...prev, userMsg]);
+  setInputText('');
+
+  setTimeout(() => {
+    const aiMsg: Message = { ... };
+    setMessages(prev => [...prev, aiMsg]);
+  }, 1000);
+};
