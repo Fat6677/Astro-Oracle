@@ -84,3 +84,18 @@ return (
             <Text style={styles.buttonText}>Cek Kecocokan Bintang</Text>
           )}
         </TouchableOpacity>
+
+        {/* Kartu Hasil */}
+        {result ? (
+          <View style={styles.resultCard}>
+            <View style={styles.resultHeader}>
+              <Ionicons name="sparkles" size={20} color="#F59E0B" />
+              <Text style={styles.resultTitle}>Analisis Kosmik</Text>
+            </View>
+            <Text style={styles.resultText}>{result}</Text>
+          </View>
+        ) : null}
+      </View>
+    </ScrollView>
+  );
+}
