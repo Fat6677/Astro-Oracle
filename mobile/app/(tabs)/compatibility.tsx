@@ -47,3 +47,14 @@ return (
           headerTitleStyle: { fontWeight: 'bold' },
         }} 
       />
+
+<View style={styles.content}>
+        <Text style={styles.label}>Pilih Dua Zodiak untuk Dicek</Text>
+        
+        {/* Area Pemilihan */}
+        <View style={styles.selectionArea}>
+          <ZodiacPicker 
+            label="Zodiak Pertama" 
+            selected={zodiac1} 
+            onSelect={setZodiac1} 
+          />
