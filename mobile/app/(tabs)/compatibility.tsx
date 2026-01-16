@@ -7,3 +7,9 @@ const zodiacs = [
   'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 
   'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
 ];
+
+export default function Compatibility() {
+  const [zodiac1, setZodiac1] = useState('');
+  const [zodiac2, setZodiac2] = useState('');
+  const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(false);
