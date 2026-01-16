@@ -58,3 +58,16 @@ return (
             selected={zodiac1} 
             onSelect={setZodiac1} 
           />
+
+          <View style={styles.heartDivider}>
+            <View style={styles.line} />
+            <Ionicons name="heart" size={32} color="#EC4899" />
+            <View style={styles.line} />
+          </View>
+
+          <ZodiacPicker 
+            label="Zodiak Kedua" 
+            selected={zodiac2} 
+            onSelect={setZodiac2} 
+          />
+        </View>
