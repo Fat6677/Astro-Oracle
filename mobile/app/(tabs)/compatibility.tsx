@@ -28,3 +28,9 @@ setTimeout(() => {
         ` Skor Kecocokan: 88%. Getaran antara ${zodiac1} dan ${zodiac2} sangat kuat. Chemistry kalian tidak bisa dibantah oleh logika apapun.`,
         ` Skor Kecocokan: 62%. Hubungan ini memerlukan kesabaran ekstra, namun hasil akhirnya akan seindah berlian yang diasah.`
       ];
+
+      const randomIndex = Math.floor(Math.random() * dummyResults.length);
+      setResult(dummyResults[randomIndex]);
+      setLoading(false);
+    }, 1500);
+  };
