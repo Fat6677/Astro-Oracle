@@ -1,37 +1,56 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
-import { useColorScheme } from 'react-native';
-import { HapticTab } from '../../components/haptic-tab';
-import { IconSymbol } from '../../components/ui/icon-symbol';
-import { MD3DarkTheme, MD3LightTheme } from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
+import { Tabs } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import Header from '../../components/ui/Header'; 
 
 export default function TabLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: theme.colors.primary,
-        tabBarInactiveTintColor: theme.colors.onSurfaceVariant,
-        headerShown: false,
-        tabBarStyle: {
-          backgroundColor: theme.colors.background,
-        },
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index" 
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+    <View style={styles.container}>
+  
+      <Header />
+
+      <Tabs
+        screenOptions={{
+          headerShown: false, 
+          tabBarStyle: {
+            backgroundColor: '#0F172A',
+            borderTopColor: '#1E293B',
+            height: 60,
+            paddingBottom: 10,
+          },
+          tabBarActiveTintColor: '#8B5CF6',
+          tabBarInactiveTintColor: '#94A3B8',
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="planet-outline" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="horoscope"
+          options={{
+            title: 'Ramalan',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="moon-outline" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: 'Profil',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="person-outline" size={size} color={color} />
+            ),
+          }}
+        />
+      </Tabs>
     </View>
   );
 }
@@ -39,6 +58,6 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F172A',
-},
+    backgroundColor: '#0F172A', 
+  },
 });

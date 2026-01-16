@@ -7,11 +7,11 @@ export default function Header() {
   const insets = useSafeAreaInsets();
 
   return (
-    // BlurView memberikan efek backdrop-blur-md seperti di web
+  
     <BlurView intensity={80} tint="light" style={[styles.header, { paddingTop: insets.top }]}>
       <View style={styles.container}>
         <View style={styles.logoWrapper}>
-          <Text style={styles.icon}>🌌</Text>
+          <Text style={styles.icon}></Text>
           <Text style={styles.title}>AstraMind</Text>
         </View>
         
