@@ -34,3 +34,16 @@ setTimeout(() => {
       setLoading(false);
     }, 1500);
   };
+
+return (
+    <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 40 }}>
+      {/* Header Navigasi */}
+      <Stack.Screen 
+        options={{ 
+          title: 'Compatibility Checker', 
+          headerShown: true,
+          headerStyle: { backgroundColor: '#0F172A' },
+          headerTintColor: '#FFF',
+          headerTitleStyle: { fontWeight: 'bold' },
+        }} 
+      />
