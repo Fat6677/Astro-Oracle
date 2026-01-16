@@ -17,7 +17,10 @@ export const HeroSection = ({ currentTime, onStart }: { currentTime: string, onS
         <Text style={styles.timeValue}>{currentTime}</Text>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={onStart}>
+     <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => router.push('/chat')}
+      >
         <Text style={styles.buttonText}>Mulai Perjalanan</Text>
       </TouchableOpacity>
     </View>
