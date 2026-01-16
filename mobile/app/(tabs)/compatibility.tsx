@@ -99,3 +99,75 @@ return (
     </ScrollView>
   );
 }
+
+// Komponen Reusable untuk Grid Zodiak
+const ZodiacPicker = ({ label, selected, onSelect }: any) => (
+  <View style={styles.pickerWrapper}>
+    <Text style={styles.pickerLabel}>{label}: <Text style={styles.selectedName}>{selected || '?'}</Text></Text>
+    <View style={styles.grid}>
+      {zodiacs.map((z) => (
+        <TouchableOpacity 
+          key={z} 
+          style={[styles.zodiacItem, selected === z && styles.zodiacActive]} 
+          onPress={() => onSelect(z)}
+        >
+          <Text style={[styles.zodiacText, selected === z && styles.zodiacTextActive]}>{z}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#0F172A' },
+  content: { padding: 20, alignItems: 'center' },
+  label: { color: '#94A3B8', fontSize: 16, marginBottom: 30, textAlign: 'center' },
+  selectionArea: { width: '100%' },
+  pickerWrapper: { marginBottom: 20 },
+  pickerLabel: { color: '#94A3B8', fontSize: 14, marginBottom: 12, marginLeft: 5 },
+  selectedName: { color: '#8B5CF6', fontWeight: 'bold' },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
+  zodiacItem: { 
+    backgroundColor: '#1E293B', 
+    paddingVertical: 8, 
+    paddingHorizontal: 12, 
+    margin: 4, 
+    borderRadius: 12, 
+    minWidth: '30%', 
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.05)'
+  },
+  zodiacActive: { backgroundColor: '#8B5CF6', borderColor: '#A855F7' },
+  zodiacText: { color: '#94A3B8', fontSize: 12 },
+  zodiacTextActive: { color: '#FFF', fontWeight: 'bold' },
+  heartDivider: { flexDirection: 'row', alignItems: 'center', marginVertical: 20, justifyContent: 'center' },
+  line: { flex: 1, height: 1, backgroundColor: '#1E293B', marginHorizontal: 15 },
+  button: { 
+    backgroundColor: '#8B5CF6', 
+    paddingVertical: 18, 
+    paddingHorizontal: 40, 
+    borderRadius: 35, 
+    marginTop: 30,
+    width: '100%',
+    alignItems: 'center',
+    shadowColor: '#8B5CF6',
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
+    elevation: 8
+  },
+  buttonDisabled: { backgroundColor: '#334155', elevation: 0 },
+  buttonText: { color: '#FFF', fontWeight: 'bold', fontSize: 16, letterSpacing: 1 },
+  resultCard: { 
+    backgroundColor: '#1E293B', 
+    padding: 25, 
+    borderRadius: 25, 
+    marginTop: 40, 
+    width: '100%',
+    borderWidth: 1,
+    borderColor: 'rgba(139, 92, 246, 0.3)'
+  },
+  resultHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 15 },
+  resultTitle: { color: '#8B5CF6', fontSize: 18, fontWeight: 'bold', marginLeft: 10 },
+  resultText: { color: '#E2E8F0', lineHeight: 24, fontSize: 15, textAlign: 'left' }
+});
