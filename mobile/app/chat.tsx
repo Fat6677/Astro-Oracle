@@ -8,3 +8,8 @@ interface Message {
   text: string;
   sender: 'user' | 'ai';
 }
+
+const [messages, setMessages] = useState<Message[]>([
+  { id: '1', text: 'Selamat datang di Portal Kosmik. Saya Astra Oracle...', sender: 'ai' }
+]);
+const [inputText, setInputText] = useState('');
