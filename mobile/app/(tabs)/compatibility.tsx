@@ -71,3 +71,16 @@ return (
             onSelect={setZodiac2} 
           />
         </View>
+
+        {/* Tombol Aksi */}
+        <TouchableOpacity 
+          style={[styles.button, (!zodiac1 || !zodiac2) && styles.buttonDisabled]} 
+          onPress={checkCompatibility}
+          disabled={loading || !zodiac1 || !zodiac2}
+        >
+          {loading ? (
+            <ActivityIndicator color="#FFF" />
+          ) : (
+            <Text style={styles.buttonText}>Cek Kecocokan Bintang</Text>
+          )}
+        </TouchableOpacity>
