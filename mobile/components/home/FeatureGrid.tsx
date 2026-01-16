@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { features, Feature } from '../../constants/FeaturesData'
+import { router, useRouter } from 'expo-router';
 
 export const FeatureGrid = ({ onFeaturePress }: { onFeaturePress: (path: string) => void }) => {
   const renderItem = ({ item }: { item: Feature }) => (
     <TouchableOpacity 
       style={[styles.card, { borderLeftColor: item.color }]} 
-      onPress={() => onFeaturePress(item.path)}
+      onPress={() => router.push('/(tabs)/compatibility' as any)}
     >
       <Text style={styles.icon}>{item.icon}</Text>
       <Text style={styles.cardTitle}>{item.title}</Text>
