@@ -34,3 +34,10 @@ const sendMessage = () => {
     </View>
   )}
 />
+
+<View style={styles.inputContainer}>
+  <TextInput ... />
+  <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
+    <Ionicons name="send" ... />
+  </TouchableOpacity>
+</View>
