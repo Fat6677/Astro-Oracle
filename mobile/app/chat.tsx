@@ -25,3 +25,12 @@ const sendMessage = () => {
     setMessages(prev => [...prev, aiMsg]);
   }, 1000);
 };
+
+<FlatList
+  data={messages}
+  renderItem={({ item }) => (
+    <View style={[styles.bubble, item.sender === 'user' ? styles.userBubble : styles.aiBubble]}>
+      <Text style={styles.messageText}>{item.text}</Text>
+    </View>
+  )}
+/>
