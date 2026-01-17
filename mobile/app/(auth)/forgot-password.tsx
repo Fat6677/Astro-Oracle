@@ -18,3 +18,6 @@ import AuthCard from '../../components/Auth/AuthCard';
 import CosmicButton from '../../components/Common/CosmicButton';
 
 
+// Styles
+import { forgotPasswordStyles as styles } from './forgot-password.styles';
+import { CosmicColors } from '../../constants/CosmicColors';
