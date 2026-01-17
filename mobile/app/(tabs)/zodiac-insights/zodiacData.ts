@@ -127,4 +127,43 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Agate', 'Citrine', 'Pearl'],
     luckyNumbers: [3, 5, 12],
   },
+
+    {
+    id: 'cancer',
+    name: 'Cancer',
+    symbol: '♋',
+    element: 'Water',
+    quality: 'Cardinal',
+    rulingPlanet: 'Moon',
+    dates: 'June 21 - July 22',
+    
+    personality: {
+      strengths: ['Loyal', 'Emotional', 'Sympathetic', 'Persuasive', 'Caring'],
+      weaknesses: ['Moody', 'Pessimistic', 'Suspicious', 'Clingy'],
+      keywords: ['Nurturer', 'Protective', 'Intuitive', 'Sentimental'],
+    },
+    
+    insights: {
+      overview: 'Cancer adalah penjaga rumah dan keluarga - penuh kasih sayang, intuitif, dan sangat protektif. Mereka adalah jiwa yang emosional dan sensitif.',
+      loveCompatibility: ['Scorpio', 'Pisces', 'Taurus', 'Virgo'],
+      careerPaths: ['Chef', 'Historian', 'Real Estate', 'Nurse', 'Interior Designer'],
+      famousCancer: ['Tom Hanks', 'Selena Gomez', 'Post Malone', 'Princess Diana'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Air memberi Cancer kedalaman emosi dan intuisi yang kuat. Mereka seperti laut yang dalam dengan arus bawah yang kuat.',
+      planetAnalysis: 'Bulan memberi Cancer sifat melindungi dan kepekaan terhadap suasana hati.',
+      houseAssociation: 'Rumah Keempat - Rumah Keluarga dan Akar.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Emotional Security & Family',
+      advice: 'Bangun fondasi emosional yang kuat dan fokus pada kehidupan rumah.',
+      challenges: 'Belajar mengelola mood dan tidak terlalu protektif.',
+    },
+    
+    colors: ['Silver', 'White', 'Sea Green'],
+    gemstones: ['Pearl', 'Moonstone', 'Emerald'],
+    luckyNumbers: [2, 7, 11],
+  },
 ];
