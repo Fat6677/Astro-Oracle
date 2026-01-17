@@ -206,5 +206,42 @@ export const zodiacData: ZodiacSign[] = [
     luckyNumbers: [1, 4, 10],
   },
 
-  
+   {
+    id: 'virgo',
+    name: 'Virgo',
+    symbol: '♍',
+    element: 'Earth',
+    quality: 'Mutable',
+    rulingPlanet: 'Mercury',
+    dates: 'August 23 - September 22',
+    
+    personality: {
+      strengths: ['Loyal', 'Analytical', 'Kind', 'Hardworking', 'Practical'],
+      weaknesses: ['Worrying', 'Shy', 'Overcritical', 'Perfectionist'],
+      keywords: ['Analyst', 'Perfectionist', 'Modest', 'Helpful'],
+    },
+    
+    insights: {
+      overview: 'Virgo adalah ahli zodiak - detail-oriented, analitis, dan selalu mencari kesempurnaan. Mereka adalah problem solver yang handal.',
+      loveCompatibility: ['Taurus', 'Capricorn', 'Cancer', 'Scorpio'],
+      careerPaths: ['Doctor', 'Accountant', 'Editor', 'Researcher', 'Nutritionist'],
+      famousVirgo: ['Beyoncé', 'Keanu Reeves', 'Zendaya', 'Freddie Mercury'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Bumi memberi Virgo sifat praktis dan perhatian pada detail-detail kecil.',
+      planetAnalysis: 'Mercury memberi Virgo kemampuan analitis dan komunikasi yang jelas.',
+      houseAssociation: 'Rumah Keenam - Rumah Kesehatan dan Rutinitas.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Health & Service',
+      advice: 'Fokus pada kesehatan, rutinitas, dan membantu orang lain.',
+      challenges: 'Belajar menerima ketidaksempurnaan dan mengurangi kekhawatiran.',
+    },
+    
+    colors: ['Navy Blue', 'Beige', 'Gray'],
+    gemstones: ['Sapphire', 'Carnelian', 'Peridot'],
+    luckyNumbers: [5, 14, 23],
+  },
 ];
