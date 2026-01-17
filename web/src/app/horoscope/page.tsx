@@ -52,7 +52,7 @@ export default function HomePage() {
       icon: '♋',
       color: '#3B82F6',
       gradient: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
-      path: '/zodiac'
+      path: '/zodiac-insights'
     },
     {
       id: 4,
@@ -396,7 +396,7 @@ export default function HomePage() {
               <h4>Produk</h4>
               <button onClick={() => router.push('/compatibility')}>Compatibility Checker</button>
               <button onClick={() => router.push('/horoscope')}>Daily Horoscope</button>
-              <button onClick={() => router.push('/zodiac')}>Zodiac Insights</button>
+              <button onClick={() => router.push('/zodiac-insights')}>Zodiac Insights</button>
             </div>
 
             <div className={styles.linkGroup}>
