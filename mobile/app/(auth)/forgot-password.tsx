@@ -42,3 +42,62 @@ export default function ForgotPasswordScreen() {
     return emailRegex.test(email);
   };
   
+  /**
+   * Handle proses pengiriman reset password
+   */
+  const handleResetPassword = () => {
+    // Validasi input
+    if (!email.trim()) {
+      Alert.alert('Error', 'Please enter your email address');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      Alert.alert('Error', 'Please enter a valid email address');
+      return;
+    }
+    
+    // Set loading state
+    setIsLoading(true);
+    
+    // Simulasi API call untuk reset password
+    setTimeout(() => {
+      setIsLoading(false);
+      setEmailSent(true);
+      
+      // Tampilkan success message
+      Alert.alert(
+        'Success',
+        `Reset password instructions have been sent to ${email}`,
+        [
+          {
+            text: 'OK',
+            onPress: () => {
+              // Kembali ke login screen setelah beberapa detik
+              setTimeout(() => {
+                router.back();
+              }, 2000);
+            }
+          }
+        ]
+      );
+      
+      // Log untuk debugging
+      console.log(`Reset password request for: ${email}`);
+    }, 1500);
+  };
+  
+  /**
+   * Navigasi kembali ke halaman login
+   */
+  const handleBackToLogin = () => {
+    router.back();
+  };
+  
+  /**
+   * Navigasi ke halaman registrasi
+   */
+  const handleGoToRegister = () => {
+    router.push('/(auth)/register');
+  };
+  
