@@ -361,4 +361,43 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Turquoise', 'Amethyst', 'Topaz'],
     luckyNumbers: [3, 7, 12],
   },
+
+   {
+    id: 'capricorn',
+    name: 'Capricorn',
+    symbol: '♑',
+    element: 'Earth',
+    quality: 'Cardinal',
+    rulingPlanet: 'Saturn',
+    dates: 'December 22 - January 19',
+    
+    personality: {
+      strengths: ['Responsible', 'Disciplined', 'Self-control', 'Good managers'],
+      weaknesses: ['Know-it-all', 'Unforgiving', 'Condescending', 'Expecting the worst'],
+      keywords: ['Ambitious', 'Disciplined', 'Patient', 'Practical'],
+    },
+    
+    insights: {
+      overview: 'Capricorn adalah pekerja keras zodiak - ambisius, disiplin, dan bertanggung jawab. Mereka adalah pendaki gunung kehidupan.',
+      loveCompatibility: ['Taurus', 'Virgo', 'Scorpio', 'Pisces'],
+      careerPaths: ['CEO', 'Engineer', 'Scientist', 'Administrator', 'Politician'],
+      famousCapricorn: ['Michelle Obama', 'LeBron James', 'Kate Middleton', 'Elvis Presley'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Bumi memberi Capricorn sifat praktis dan kemampuan membangun fondasi yang kokoh.',
+      planetAnalysis: 'Saturn memberi Capricorn disiplin dan kesabaran untuk mencapai tujuan jangka panjang.',
+      houseAssociation: 'Rumah Kesepuluh - Rumah Karir dan Reputasi.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Career & Structure',
+      advice: 'Fokus pada tujuan karir dan membangun struktur yang stabil.',
+      challenges: 'Belajar bersantai dan menikmati hidup selain pekerjaan.',
+    },
+    
+    colors: ['Brown', 'Gray', 'Black'],
+    gemstones: ['Garnet', 'Onyx', 'Ruby'],
+    luckyNumbers: [4, 8, 13],
+  },
 ];
