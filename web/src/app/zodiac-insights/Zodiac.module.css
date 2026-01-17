@@ -1,0 +1,865 @@
+/* src/app/zodiac/Zodiac.module.css */
+
+/* Container & Background */
+.zodiacContainer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 30%, #0a1a2a 70%, #0a0a1a 100%);
+  color: #f8f9fa;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+}
+
+.cosmicBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(106, 13, 173, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(13, 71, 173, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 55%);
+  z-index: 0;
+  animation: cosmicFloat 20s ease-in-out infinite alternate;
+}
+
+.nebulaEffect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(33, 150, 243, 0.08) 0%, transparent 50%);
+  z-index: 1;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+
+.constellationOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    radial-gradient(2px 2px at 15% 25%, rgba(216, 180, 254, 0.3), transparent),
+    radial-gradient(2px 2px at 85% 15%, rgba(180, 216, 254, 0.2), transparent),
+    radial-gradient(3px 3px at 45% 65%, rgba(254, 180, 216, 0.3), transparent);
+  animation: constellationTwinkle 8s ease-in-out infinite;
+}
+
+/* Animated Planets */
+.planetOne,
+.planetTwo,
+.planetThree {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(15px);
+}
+
+.planetOne {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  right: 5%;
+  background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.1), transparent 70%);
+  opacity: 0.4;
+  animation: planetOrbit 30s linear infinite;
+}
+
+.planetTwo {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  left: 10%;
+  background: radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.08), transparent 70%);
+  opacity: 0.3;
+  animation: planetOrbit 25s linear infinite reverse;
+}
+
+.planetThree {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 5%;
+  background: radial-gradient(circle at 50% 50%, rgba(216, 180, 254, 0.06), transparent 70%);
+  opacity: 0.35;
+  animation: planetOrbit 35s linear infinite;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+  font-family: 'Georgia', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.titleIcon {
+  font-size: 3rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #b0b0d0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Controls Section */
+.controlsSection {
+  background: rgba(20, 15, 45, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.searchContainer {
+  margin-bottom: 1.5rem;
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background: rgba(30, 25, 60, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+  background: rgba(30, 25, 60, 0.9);
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+}
+
+.clearButton {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.clearButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.filtersContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  color: #d0d0f0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.elementFilters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.elementButton {
+  padding: 0.5rem 1rem;
+  background: rgba(30, 25, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.elementButton:hover {
+  background: rgba(40, 35, 70, 0.8);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.elementButton.active {
+  background: rgba(var(--element-color, 139, 92, 246), 0.15);
+  border-color: rgba(var(--element-color, 139, 92, 246), 0.5);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(var(--element-color, 139, 92, 246), 0.2);
+}
+
+.sortSelect {
+  padding: 0.5rem 1rem;
+  background: rgba(30, 25, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sortSelect:focus {
+  outline: none;
+  border-color: #a855f7;
+}
+
+.viewControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton {
+  flex: 1;
+  padding: 0.5rem;
+  background: rgba(30, 25, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.viewButton:hover {
+  background: rgba(40, 35, 70, 0.8);
+}
+
+.viewButton.active {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.5);
+  color: #ffffff;
+}
+
+.viewIcon {
+  font-size: 1rem;
+}
+
+.comparisonControl {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.comparisonButton {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: rgba(30, 25, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.comparisonButton:hover {
+  background: rgba(40, 35, 70, 0.8);
+}
+
+.comparisonButton.comparing {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.5);
+  color: #ffffff;
+}
+
+.comparisonIcon {
+  font-size: 1rem;
+}
+
+.comparisonCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearComparisonButton {
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clearComparisonButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Comparison Bar */
+.comparisonBar {
+  background: rgba(20, 15, 45, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+
+.comparisonHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.comparisonHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.comparisonHint {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.comparisonChips {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.comparisonChip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+}
+
+.chipSymbol {
+  font-size: 1.2rem;
+}
+
+.chipName {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.chipRemove {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.chipRemove:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.maxLimit {
+  padding: 0.5rem 1rem;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 25px;
+  color: #ef4444;
+  font-size: 0.9rem;
+}
+
+.analyzeButton {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #8B5CF6, #A855F7);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.analyzeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+/* Main Content Layout */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.zodiacSection {
+  background: rgba(20, 15, 45, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
+}
+
+.zodiacSection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.zodiacSection::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.zodiacSection::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 4px;
+}
+
+.zodiacSection::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.5);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sectionTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.signsCount {
+  color: #d8b4fe;
+  font-weight: 300;
+}
+
+.elementsLegend {
+  display: flex;
+  gap: 1rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.legendIcon {
+  font-size: 1rem;
+}
+
+/* Zodiac Grid */
+.zodiacGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.zodiacCard {
+  background: rgba(30, 25, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.zodiacCard:hover {
+  background: rgba(40, 35, 70, 0.8);
+  border-color: rgba(var(--zodiac-color, 168, 85, 247), 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.zodiacCard.selected {
+  background: rgba(var(--zodiac-color, 168, 85, 247), 0.15);
+  border-color: rgba(var(--zodiac-color, 168, 85, 247), 0.5);
+  box-shadow: 0 10px 40px rgba(var(--zodiac-color, 168, 85, 247), 0.2);
+}
+
+.zodiacCard.comparisonSelected {
+  border: 2px solid rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.zodiacSymbol {
+  font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--zodiac-color, 168, 85, 247), 0.1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.zodiacInfo {
+  flex: 1;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.cardDates {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.comparisonBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 24px;
+  height: 24px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.cardBody {
+  margin-bottom: 1rem;
+}
+
+.elementBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(var(--element-color, 139, 92, 246), 0.15);
+  border: 1px solid rgba(var(--element-color, 139, 92, 246), 0.3);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.elementIcon {
+  font-size: 0.9rem;
+}
+
+.cardTraits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.traitTag {
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.planetInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+
+.planetIcon {
+  font-size: 1rem;
+}
+
+.houseBadge {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: inset 0 0 40px rgba(var(--zodiac-color, 168, 85, 247), 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zodiacCard:hover .cardGlow {
+  opacity: 1;
+}
+
+/* Zodiac List View */
+.zodiacList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(30, 25, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.listItem:hover {
+  background: rgba(40, 35, 70, 0.8);
+  transform: translateX(5px);
+}
+
+.listItem.selected {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.listSymbol {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.listContent {
+  flex: 1;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.listHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.listDates {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.listDetails {
+  display: flex;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.listElement,
+.listPlanet,
+.listHouse {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Animations */
+@keyframes cosmicFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+@keyframes constellationTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes planetOrbit {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0);
+  }
+  25% {
+    transform: rotate(90deg) translateX(20px) translateY(-20px);
+  }
+  50% {
+    transform: rotate(180deg) translateX(0) translateY(0);
+  }
+  75% {
+    transform: rotate(270deg) translateX(-20px) translateY(20px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0) translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
