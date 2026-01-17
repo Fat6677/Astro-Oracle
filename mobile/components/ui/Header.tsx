@@ -8,11 +8,11 @@ export default function Header() {
 
   return (
   
-    <BlurView intensity={80} tint="light" style={[styles.header, { paddingTop: insets.top }]}>
+    <BlurView intensity={80} tint="dark" style={[styles.header, { paddingTop: insets.top }]}>
       <View style={styles.container}>
         <View style={styles.logoWrapper}>
           <Text style={styles.icon}></Text>
-          <Text style={styles.title}>AstraMind</Text>
+          <Text style={styles.title}>Astro-Oracle</Text>
         </View>
         
         <Text style={styles.subtitle}>Ramalan Harian Pintar</Text>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     letterSpacing: -0.5,
-    color: '#000',
+    color: '#ffffff',
   },
   subtitle: {
     fontSize: 12,

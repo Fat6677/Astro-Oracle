@@ -15,42 +15,37 @@ export const zodiacData: ZodiacSign[] = [
     rulingPlanet: 'Mars',
     dates: 'March 21 - April 19',
     
-    // Personality Traits
     personality: {
       strengths: ['Courageous', 'Determined', 'Confident', 'Enthusiastic', 'Optimistic'],
       weaknesses: ['Impatient', 'Moody', 'Short-tempered', 'Impulsive', 'Aggressive'],
       keywords: ['Pioneer', 'Trailblazer', 'Energetic', 'Adventurous'],
     },
     
-    // Deep Insights
     insights: {
       overview: 'Aries adalah pionir zodiak - penuh energi, berani, dan selalu siap memimpin. Sebagai zodiak pertama, mereka membawa semangat baru dan awal yang segar.',
       loveCompatibility: ['Leo', 'Sagittarius', 'Gemini', 'Aquarius'],
       careerPaths: ['Entrepreneur', 'Athlete', 'Military', 'Surgeon', 'Explorer'],
-      famousAries: ['Lady Gaga', 'Robert Downey Jr.', 'Elton John', 'Emma Watson'],
+      famousPeople: ['Lady Gaga', 'Robert Downey Jr.', 'Elton John', 'Emma Watson'], // Ganti dari famousAries
     },
     
-    // Cosmic Analysis
     cosmicAnalysis: {
       elementAnalysis: 'Api memberi Aries energi tak terbatas dan semangat kompetitif. Mereka seperti api unggun yang menyala terang dan panas.',
       planetAnalysis: 'Mars, planet perang, memberi Aries sifat agresif dan hasrat untuk menaklukkan.',
       houseAssociation: 'Rumah Pertama - Rumah Diri, memengaruhi identitas dan penampilan pribadi.',
     },
     
-    // Yearly Focus
     yearlyFocus: {
       theme: 'Personal Growth & New Beginnings',
       advice: 'Fokus pada proyek-proyek baru dan jangan takut mengambil risiko.',
       challenges: 'Belajar mengendalikan emosi dan menjadi lebih sabar.',
     },
     
-    // Visual Properties
     colors: ['Red', 'Scarlet', 'Crimson'],
     gemstones: ['Diamond', 'Ruby', 'Bloodstone'],
     luckyNumbers: [1, 9, 19],
   },
-
-   {
+  
+  {
     id: 'taurus',
     name: 'Taurus',
     symbol: '♉',
@@ -69,7 +64,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Taurus adalah penjaga kebahagiaan duniawi - mencintai keindahan, kenyamanan, dan stabilitas. Mereka adalah fondasi yang kokoh dalam kehidupan.',
       loveCompatibility: ['Virgo', 'Capricorn', 'Cancer', 'Pisces'],
       careerPaths: ['Banker', 'Chef', 'Artist', 'Architect', 'Landscaper'],
-      famousTaurus: ['Adele', 'David Beckham', 'George Clooney', 'Queen Elizabeth II'],
+      famousPeople: ['Adele', 'David Beckham', 'George Clooney', 'Queen Elizabeth II'], // Ganti dari famousTaurus
     },
     
     cosmicAnalysis: {
@@ -88,8 +83,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Emerald', 'Rose Quartz', 'Sapphire'],
     luckyNumbers: [2, 6, 9],
   },
-
-   {
+  
+  {
     id: 'gemini',
     name: 'Gemini',
     symbol: '♊',
@@ -108,7 +103,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Gemini adalah si kembar yang selalu haus pengetahuan - cerewet, cepat belajar, dan selalu ingin tahu. Mereka adalah jembatan antar manusia.',
       loveCompatibility: ['Libra', 'Aquarius', 'Aries', 'Leo'],
       careerPaths: ['Journalist', 'Teacher', 'Salesperson', 'Writer', 'Broadcaster'],
-      famousGemini: ['Kanye West', 'Angelina Jolie', 'Johnny Depp', 'Kendrick Lamar'],
+      famousPeople: ['Kanye West', 'Angelina Jolie', 'Johnny Depp', 'Kendrick Lamar'], // Ganti dari famousGemini
     },
     
     cosmicAnalysis: {
@@ -127,8 +122,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Agate', 'Citrine', 'Pearl'],
     luckyNumbers: [3, 5, 12],
   },
-
-    {
+  
+  {
     id: 'cancer',
     name: 'Cancer',
     symbol: '♋',
@@ -147,7 +142,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Cancer adalah penjaga rumah dan keluarga - penuh kasih sayang, intuitif, dan sangat protektif. Mereka adalah jiwa yang emosional dan sensitif.',
       loveCompatibility: ['Scorpio', 'Pisces', 'Taurus', 'Virgo'],
       careerPaths: ['Chef', 'Historian', 'Real Estate', 'Nurse', 'Interior Designer'],
-      famousCancer: ['Tom Hanks', 'Selena Gomez', 'Post Malone', 'Princess Diana'],
+      famousPeople: ['Tom Hanks', 'Selena Gomez', 'Post Malone', 'Princess Diana'], // Ganti dari famousCancer
     },
     
     cosmicAnalysis: {
@@ -166,8 +161,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Pearl', 'Moonstone', 'Emerald'],
     luckyNumbers: [2, 7, 11],
   },
-
-    {
+  
+  {
     id: 'leo',
     name: 'Leo',
     symbol: '♌',
@@ -186,7 +181,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Leo adalah raja hutan zodiak - karismatik, kreatif, dan penuh percaya diri. Mereka lahir untuk bersinar dan memimpin.',
       loveCompatibility: ['Aries', 'Sagittarius', 'Gemini', 'Libra'],
       careerPaths: ['Actor', 'Politician', 'CEO', 'Designer', 'Event Planner'],
-      famousLeo: ['Barack Obama', 'Madonna', 'Chris Hemsworth', 'Jennifer Lopez'],
+      famousPeople: ['Barack Obama', 'Madonna', 'Chris Hemsworth', 'Jennifer Lopez'], // Ganti dari famousLeo
     },
     
     cosmicAnalysis: {
@@ -205,8 +200,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Ruby', 'Amber', 'Citrine'],
     luckyNumbers: [1, 4, 10],
   },
-
-   {
+  
+  {
     id: 'virgo',
     name: 'Virgo',
     symbol: '♍',
@@ -225,7 +220,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Virgo adalah ahli zodiak - detail-oriented, analitis, dan selalu mencari kesempurnaan. Mereka adalah problem solver yang handal.',
       loveCompatibility: ['Taurus', 'Capricorn', 'Cancer', 'Scorpio'],
       careerPaths: ['Doctor', 'Accountant', 'Editor', 'Researcher', 'Nutritionist'],
-      famousVirgo: ['Beyoncé', 'Keanu Reeves', 'Zendaya', 'Freddie Mercury'],
+      famousPeople: ['Beyoncé', 'Keanu Reeves', 'Zendaya', 'Freddie Mercury'], // Ganti dari famousVirgo
     },
     
     cosmicAnalysis: {
@@ -244,8 +239,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Sapphire', 'Carnelian', 'Peridot'],
     luckyNumbers: [5, 14, 23],
   },
-
-   {
+  
+  {
     id: 'libra',
     name: 'Libra',
     symbol: '♎',
@@ -264,7 +259,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Libra adalah diplomat zodiak - selalu mencari harmoni, keadilan, dan keindahan. Mereka adalah penghubung antar manusia.',
       loveCompatibility: ['Gemini', 'Aquarius', 'Leo', 'Sagittarius'],
       careerPaths: ['Lawyer', 'Mediator', 'Artist', 'Counselor', 'Stylist'],
-      famousLibra: ['Kim Kardashian', 'Will Smith', 'Bruno Mars', 'Gwyneth Paltrow'],
+      famousPeople: ['Kim Kardashian', 'Will Smith', 'Bruno Mars', 'Gwyneth Paltrow'], // Ganti dari famousLibra
     },
     
     cosmicAnalysis: {
@@ -283,8 +278,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Opal', 'Lapis Lazuli', 'Diamond'],
     luckyNumbers: [6, 15, 24],
   },
-
-    {
+  
+  {
     id: 'scorpio',
     name: 'Scorpio',
     symbol: '♏',
@@ -303,7 +298,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Scorpio adalah zodiak paling misterius dan intens - penuh gairah, intuitif, dan transformatif. Mereka memiliki kedalaman yang tidak dimiliki zodiak lain.',
       loveCompatibility: ['Cancer', 'Pisces', 'Virgo', 'Capricorn'],
       careerPaths: ['Detective', 'Psychologist', 'Researcher', 'Surgeon', 'Banker'],
-      famousScorpio: ['Drake', 'Julia Roberts', 'Ryan Gosling', 'Bill Gates'],
+      famousPeople: ['Drake', 'Julia Roberts', 'Ryan Gosling', 'Bill Gates'], // Ganti dari famousScorpio
     },
     
     cosmicAnalysis: {
@@ -322,8 +317,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Topaz', 'Obsidian', 'Malachite'],
     luckyNumbers: [8, 11, 18],
   },
-
-    {
+  
+  {
     id: 'sagittarius',
     name: 'Sagittarius',
     symbol: '♐',
@@ -342,7 +337,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Sagittarius adalah petualang zodiak - optimis, filosofis, dan selalu mencari kebenaran. Mereka adalah pengembara yang bebas.',
       loveCompatibility: ['Aries', 'Leo', 'Libra', 'Aquarius'],
       careerPaths: ['Professor', 'Travel Guide', 'Publisher', 'Athlete', 'Explorer'],
-      famousSagittarius: ['Taylor Swift', 'Brad Pitt', 'Miley Cyrus', 'Jay-Z'],
+      famousPeople: ['Taylor Swift', 'Brad Pitt', 'Miley Cyrus', 'Jay-Z'], // Ganti dari famousSagittarius
     },
     
     cosmicAnalysis: {
@@ -361,8 +356,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Turquoise', 'Amethyst', 'Topaz'],
     luckyNumbers: [3, 7, 12],
   },
-
-   {
+  
+  {
     id: 'capricorn',
     name: 'Capricorn',
     symbol: '♑',
@@ -381,7 +376,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Capricorn adalah pekerja keras zodiak - ambisius, disiplin, dan bertanggung jawab. Mereka adalah pendaki gunung kehidupan.',
       loveCompatibility: ['Taurus', 'Virgo', 'Scorpio', 'Pisces'],
       careerPaths: ['CEO', 'Engineer', 'Scientist', 'Administrator', 'Politician'],
-      famousCapricorn: ['Michelle Obama', 'LeBron James', 'Kate Middleton', 'Elvis Presley'],
+      famousPeople: ['Michelle Obama', 'LeBron James', 'Kate Middleton', 'Elvis Presley'], // Ganti dari famousCapricorn
     },
     
     cosmicAnalysis: {
@@ -400,8 +395,8 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Garnet', 'Onyx', 'Ruby'],
     luckyNumbers: [4, 8, 13],
   },
-
-    {
+  
+  {
     id: 'aquarius',
     name: 'Aquarius',
     symbol: '♒',
@@ -420,7 +415,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Aquarius adalah inovator zodiak - visioner, humanis, dan selalu berpikir ke depan. Mereka adalah agen perubahan.',
       loveCompatibility: ['Gemini', 'Libra', 'Aries', 'Sagittarius'],
       careerPaths: ['Scientist', 'Inventor', 'Social Worker', 'Astronomer', 'Programmer'],
-      famousAquarius: ['Oprah Winfrey', 'Cristiano Ronaldo', 'Harry Styles', 'Shakira'],
+      famousPeople: ['Oprah Winfrey', 'Cristiano Ronaldo', 'Harry Styles', 'Shakira'], // Ganti dari famousAquarius
     },
     
     cosmicAnalysis: {
@@ -440,7 +435,7 @@ export const zodiacData: ZodiacSign[] = [
     luckyNumbers: [4, 7, 11],
   },
   
-    {
+  {
     id: 'pisces',
     name: 'Pisces',
     symbol: '♓',
@@ -459,7 +454,7 @@ export const zodiacData: ZodiacSign[] = [
       overview: 'Pisces adalah visioner zodiak - intuitif, spiritual, dan sangat kreatif. Mereka adalah penghubung antara dunia fisik dan spiritual.',
       loveCompatibility: ['Cancer', 'Scorpio', 'Taurus', 'Capricorn'],
       careerPaths: ['Artist', 'Musician', 'Psychic', 'Marine Biologist', 'Nurse'],
-      famousPisces: ['Rihanna', 'Albert Einstein', 'Steve Jobs', 'Kurt Cobain'],
+      famousPeople: ['Rihanna', 'Albert Einstein', 'Steve Jobs', 'Kurt Cobain'], // Ganti dari famousPisces
     },
     
     cosmicAnalysis: {

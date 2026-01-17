@@ -22,7 +22,7 @@ export interface ZodiacSign {
     overview: string;
     loveCompatibility: string[];
     careerPaths: string[];
-    famousAries: string[];
+    famousPeople: string[]; // Ganti dari famousAries menjadi generic
   };
   
   cosmicAnalysis: {
