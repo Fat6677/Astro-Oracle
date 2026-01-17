@@ -166,4 +166,45 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Pearl', 'Moonstone', 'Emerald'],
     luckyNumbers: [2, 7, 11],
   },
+
+    {
+    id: 'leo',
+    name: 'Leo',
+    symbol: '♌',
+    element: 'Fire',
+    quality: 'Fixed',
+    rulingPlanet: 'Sun',
+    dates: 'July 23 - August 22',
+    
+    personality: {
+      strengths: ['Creative', 'Passionate', 'Generous', 'Cheerful', 'Humorous'],
+      weaknesses: ['Arrogant', 'Stubborn', 'Self-centered', 'Lazy'],
+      keywords: ['Leader', 'Dramatic', 'Confident', 'Warm-hearted'],
+    },
+    
+    insights: {
+      overview: 'Leo adalah raja hutan zodiak - karismatik, kreatif, dan penuh percaya diri. Mereka lahir untuk bersinar dan memimpin.',
+      loveCompatibility: ['Aries', 'Sagittarius', 'Gemini', 'Libra'],
+      careerPaths: ['Actor', 'Politician', 'CEO', 'Designer', 'Event Planner'],
+      famousLeo: ['Barack Obama', 'Madonna', 'Chris Hemsworth', 'Jennifer Lopez'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Api memberi Leo energi kreatif dan semangat hidup yang menggebu-gebu.',
+      planetAnalysis: 'Matahari memberi Leo sifat kepemimpinan dan keinginan untuk menjadi pusat perhatian.',
+      houseAssociation: 'Rumah Kelima - Rumah Kreativitas dan Kesenangan.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Self-Expression & Creativity',
+      advice: 'Tampilkan bakat kreatif dan ambil peran kepemimpinan.',
+      challenges: 'Belajar mendengarkan orang lain dan menghindari ego yang berlebihan.',
+    },
+    
+    colors: ['Gold', 'Orange', 'Royal Blue'],
+    gemstones: ['Ruby', 'Amber', 'Citrine'],
+    luckyNumbers: [1, 4, 10],
+  },
+
+  
 ];
