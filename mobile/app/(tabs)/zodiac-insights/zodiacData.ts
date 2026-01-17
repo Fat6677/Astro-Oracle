@@ -400,4 +400,44 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Garnet', 'Onyx', 'Ruby'],
     luckyNumbers: [4, 8, 13],
   },
+
+    {
+    id: 'aquarius',
+    name: 'Aquarius',
+    symbol: '♒',
+    element: 'Air',
+    quality: 'Fixed',
+    rulingPlanet: 'Uranus',
+    dates: 'January 20 - February 18',
+    
+    personality: {
+      strengths: ['Progressive', 'Original', 'Humanitarian', 'Independent'],
+      weaknesses: ['Runs from emotional expression', 'Temperamental', 'Uncompromising'],
+      keywords: ['Innovator', 'Humanitarian', 'Eccentric', 'Visionary'],
+    },
+    
+    insights: {
+      overview: 'Aquarius adalah inovator zodiak - visioner, humanis, dan selalu berpikir ke depan. Mereka adalah agen perubahan.',
+      loveCompatibility: ['Gemini', 'Libra', 'Aries', 'Sagittarius'],
+      careerPaths: ['Scientist', 'Inventor', 'Social Worker', 'Astronomer', 'Programmer'],
+      famousAquarius: ['Oprah Winfrey', 'Cristiano Ronaldo', 'Harry Styles', 'Shakira'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Udara memberi Aquarius kemampuan berpikir visioner dan konseptual.',
+      planetAnalysis: 'Uranus memberi Aquarius sifat revolusioner dan keinginan untuk kebebasan.',
+      houseAssociation: 'Rumah Kesebelas - Rumah Persahabatan dan Harapan.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Innovation & Community',
+      advice: 'Fokus pada proyek-proyek inovatif dan kontribusi sosial.',
+      challenges: 'Belajar mengekspresikan emosi dan menghubungkan dengan orang lain secara personal.',
+    },
+    
+    colors: ['Electric Blue', 'Silver', 'Aqua'],
+    gemstones: ['Amethyst', 'Aquamarine', 'Opal'],
+    luckyNumbers: [4, 7, 11],
+  },
+  
 ];
