@@ -89,5 +89,42 @@ export const zodiacData: ZodiacSign[] = [
     luckyNumbers: [2, 6, 9],
   },
 
-  
+   {
+    id: 'gemini',
+    name: 'Gemini',
+    symbol: '♊',
+    element: 'Air',
+    quality: 'Mutable',
+    rulingPlanet: 'Mercury',
+    dates: 'May 21 - June 20',
+    
+    personality: {
+      strengths: ['Gentle', 'Affectionate', 'Curious', 'Adaptable', 'Eloquent'],
+      weaknesses: ['Nervous', 'Inconsistent', 'Indecisive', 'Superficial'],
+      keywords: ['Communicator', 'Versatile', 'Youthful', 'Intellectual'],
+    },
+    
+    insights: {
+      overview: 'Gemini adalah si kembar yang selalu haus pengetahuan - cerewet, cepat belajar, dan selalu ingin tahu. Mereka adalah jembatan antar manusia.',
+      loveCompatibility: ['Libra', 'Aquarius', 'Aries', 'Leo'],
+      careerPaths: ['Journalist', 'Teacher', 'Salesperson', 'Writer', 'Broadcaster'],
+      famousGemini: ['Kanye West', 'Angelina Jolie', 'Johnny Depp', 'Kendrick Lamar'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Udara memberi Gemini kemampuan komunikasi dan pemikiran analitis. Mereka seperti angin yang selalu bergerak dan berubah.',
+      planetAnalysis: 'Mercury, planet komunikasi, memberi Gemini kemampuan verbal dan intelektual yang luar biasa.',
+      houseAssociation: 'Rumah Ketiga - Rumah Komunikasi dan Hubungan.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Communication & Learning',
+      advice: 'Eksplorasi bidang baru dan perbanyak jaringan sosial.',
+      challenges: 'Fokus menyelesaikan satu hal sebelum pindah ke hal lain.',
+    },
+    
+    colors: ['Yellow', 'Light Green', 'Silver'],
+    gemstones: ['Agate', 'Citrine', 'Pearl'],
+    luckyNumbers: [3, 5, 12],
+  },
 ];
