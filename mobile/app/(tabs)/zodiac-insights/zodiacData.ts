@@ -322,4 +322,43 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Topaz', 'Obsidian', 'Malachite'],
     luckyNumbers: [8, 11, 18],
   },
+
+    {
+    id: 'sagittarius',
+    name: 'Sagittarius',
+    symbol: '♐',
+    element: 'Fire',
+    quality: 'Mutable',
+    rulingPlanet: 'Jupiter',
+    dates: 'November 22 - December 21',
+    
+    personality: {
+      strengths: ['Generous', 'Idealistic', 'Great sense of humor', 'Adventurous'],
+      weaknesses: ['Promises more than can deliver', 'Very impatient', 'Will say anything no matter how undiplomatic'],
+      keywords: ['Explorer', 'Philosopher', 'Optimistic', 'Freedom-loving'],
+    },
+    
+    insights: {
+      overview: 'Sagittarius adalah petualang zodiak - optimis, filosofis, dan selalu mencari kebenaran. Mereka adalah pengembara yang bebas.',
+      loveCompatibility: ['Aries', 'Leo', 'Libra', 'Aquarius'],
+      careerPaths: ['Professor', 'Travel Guide', 'Publisher', 'Athlete', 'Explorer'],
+      famousSagittarius: ['Taylor Swift', 'Brad Pitt', 'Miley Cyrus', 'Jay-Z'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Api memberi Sagittarius semangat petualangan dan optimisme yang tak terbendung.',
+      planetAnalysis: 'Jupiter memberi Sagittarius keberuntungan dan keinginan untuk ekspansi.',
+      houseAssociation: 'Rumah Kesembilan - Rumah Filsafat dan Perjalanan.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Expansion & Adventure',
+      advice: 'Eksplorasi budaya baru dan perluasan pengetahuan.',
+      challenges: 'Belajar fokus dan menghormati komitmen.',
+    },
+    
+    colors: ['Purple', 'Dark Blue', 'Gold'],
+    gemstones: ['Turquoise', 'Amethyst', 'Topaz'],
+    luckyNumbers: [3, 7, 12],
+  },
 ];
