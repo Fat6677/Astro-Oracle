@@ -325,3 +325,39 @@ export const forgotPasswordStyles = StyleSheet.create({
 });
 
 
+// Responsive styles untuk perangkat kecil
+export const responsiveStyles = {
+  small: {
+    title: {
+      fontSize: 28,
+    },
+    authCard: {
+      padding: 20,
+    },
+    textInput: {
+      fontSize: 15,
+    },
+    submitButton: {
+      height: 50,
+    },
+  },
+  
+  tablet: {
+    content: {
+      maxWidth: 500,
+    },
+    authCard: {
+      padding: 30,
+    },
+  },
+};
+
+// Helper untuk mendapatkan styles responsif
+export const getResponsiveStyles = () => {
+  if (SCREEN_WIDTH >= 768) {
+    return responsiveStyles.tablet;
+  } else if (SCREEN_WIDTH <= 375) {
+    return responsiveStyles.small;
+  }
+  return {};
+};
