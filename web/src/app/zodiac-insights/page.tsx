@@ -228,3 +228,703 @@ const zodiacSigns: ZodiacSign[] = [
     house: 12
   }
 ];
+
+type ElementType = 'All' | 'Fire' | 'Earth' | 'Air' | 'Water';
+type SortOption = 'name' | 'element' | 'house' | 'dates';
+
+export default function ZodiacInsightsPage() {
+  const [selectedSign, setSelectedSign] = useState<ZodiacSign | null>(zodiacSigns[0]);
+  const [filterElement, setFilterElement] = useState<ElementType>('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState<SortOption>('house');
+  const [isComparing, setIsComparing] = useState(false);
+  const [comparisonSigns, setComparisonSigns] = useState<ZodiacSign[]>([]);
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Filter and sort zodiac signs
+  const filteredSigns = zodiacSigns
+    .filter(sign => {
+      if (filterElement !== 'All' && sign.element !== filterElement) return false;
+      if (searchQuery && !sign.name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+      return true;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'name': return a.name.localeCompare(b.name);
+        case 'element': return a.element.localeCompare(b.element);
+        case 'house': return a.house - b.house;
+        case 'dates': return a.dates.localeCompare(b.dates);
+        default: return 0;
+      }
+    });
+
+  const handleSignSelect = (sign: ZodiacSign) => {
+    if (isComparing) {
+      if (comparisonSigns.includes(sign)) {
+        setComparisonSigns(prev => prev.filter(s => s.id !== sign.id));
+      } else if (comparisonSigns.length < 3) {
+        setComparisonSigns(prev => [...prev, sign]);
+      }
+    } else {
+      setSelectedSign(sign);
+      setIsLoading(true);
+      setTimeout(() => setIsLoading(false), 300);
+    }
+  };
+
+  const toggleComparison = () => {
+    setIsComparing(!isComparing);
+    if (isComparing) {
+      setComparisonSigns([]);
+    }
+  };
+
+  const clearComparison = () => {
+    setComparisonSigns([]);
+  };
+
+  const getElementColor = (element: string) => {
+    switch (element) {
+      case 'Fire': return '#FF6B6B';
+      case 'Earth': return '#4ECDC4';
+      case 'Air': return '#45B7D1';
+      case 'Water': return '#74B9FF';
+      default: return '#8B5CF6';
+    }
+  };
+
+  const getElementIcon = (element: string) => {
+    switch (element) {
+      case 'Fire': return '🔥';
+      case 'Earth': return '🌍';
+      case 'Air': return '💨';
+      case 'Water': return '💧';
+      default: return '✨';
+    }
+  };
+
+  return (
+    <div className={styles.zodiacContainer}>
+      {/* Background Elements */}
+      <div className={styles.cosmicBackground}></div>
+      <div className={styles.nebulaEffect}></div>
+      <div className={styles.constellationOverlay}></div>
+      
+      {/* Animated Planets */}
+      <div className={styles.planetOne}></div>
+      <div className={styles.planetTwo}></div>
+      <div className={styles.planetThree}></div>
+
+      <div className={styles.contentWrapper}>
+        {/* Header */}
+        <header className={styles.header}>
+          <h1 className={styles.mainTitle}>
+            <span className={styles.titleIcon}>♋</span>
+            Zodiac Insights
+          </h1>
+          <p className={styles.subtitle}>
+            Explore the 12 zodiac signs in detail. Discover personalities, traits, and cosmic connections.
+          </p>
+        </header>
+
+        {/* Controls Section */}
+        <div className={styles.controlsSection}>
+          <div className={styles.searchContainer}>
+            <div className={styles.searchWrapper}>
+              <span className={styles.searchIcon}>🔍</span>
+              <input
+                type="text"
+                className={styles.searchInput}
+                placeholder="Search zodiac signs..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <button 
+                  className={styles.clearButton}
+                  onClick={() => setSearchQuery('')}
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.filtersContainer}>
+            <div className={styles.filterGroup}>
+              <label className={styles.filterLabel}>Filter by Element:</label>
+              <div className={styles.elementFilters}>
+                <button
+                  className={`${styles.elementButton} ${filterElement === 'All' ? styles.active : ''}`}
+                  onClick={() => setFilterElement('All')}
+                >
+                  All ✨
+                </button>
+                {['Fire', 'Earth', 'Air', 'Water'].map(element => (
+                  <button
+                    key={element}
+                    className={`${styles.elementButton} ${filterElement === element ? styles.active : ''}`}
+                    onClick={() => setFilterElement(element as ElementType)}
+                    style={{ '--element-color': getElementColor(element) } as React.CSSProperties}
+                  >
+                    {getElementIcon(element)} {element}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.filterGroup}>
+              <label className={styles.filterLabel}>Sort by:</label>
+              <select 
+                className={styles.sortSelect}
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
+              >
+                <option value="house">Zodiac Order</option>
+                <option value="name">Name A-Z</option>
+                <option value="element">Element</option>
+                <option value="dates">Date Range</option>
+              </select>
+            </div>
+
+            <div className={styles.viewControls}>
+              <button
+                className={`${styles.viewButton} ${viewMode === 'grid' ? styles.active : ''}`}
+                onClick={() => setViewMode('grid')}
+              >
+                <span className={styles.viewIcon}>◼◼</span> Grid
+              </button>
+              <button
+                className={`${styles.viewButton} ${viewMode === 'list' ? styles.active : ''}`}
+                onClick={() => setViewMode('list')}
+              >
+                <span className={styles.viewIcon}>☰</span> List
+              </button>
+            </div>
+
+            <div className={styles.comparisonControl}>
+              <button
+                className={`${styles.comparisonButton} ${isComparing ? styles.comparing : ''}`}
+                onClick={toggleComparison}
+              >
+                <span className={styles.comparisonIcon}>⚖️</span>
+                {isComparing ? 'Exit Comparison' : 'Compare Signs'}
+                {comparisonSigns.length > 0 && (
+                  <span className={styles.comparisonCount}>{comparisonSigns.length}</span>
+                )}
+              </button>
+              {isComparing && comparisonSigns.length > 0 && (
+                <button
+                  className={styles.clearComparisonButton}
+                  onClick={clearComparison}
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Comparison Bar */}
+        {isComparing && comparisonSigns.length > 0 && (
+          <div className={styles.comparisonBar}>
+            <div className={styles.comparisonHeader}>
+              <h3>Comparing {comparisonSigns.length} Signs:</h3>
+              <span className={styles.comparisonHint}>
+                Select up to 3 signs for detailed comparison
+              </span>
+            </div>
+            <div className={styles.comparisonChips}>
+              {comparisonSigns.map(sign => (
+                <div key={sign.id} className={styles.comparisonChip}>
+                  <span className={styles.chipSymbol}>{sign.symbol}</span>
+                  <span className={styles.chipName}>{sign.name}</span>
+                  <button
+                    className={styles.chipRemove}
+                    onClick={() => handleSignSelect(sign)}
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
+              {comparisonSigns.length === 3 && (
+                <div className={styles.maxLimit}>Max 3 signs</div>
+              )}
+            </div>
+            {comparisonSigns.length >= 2 && (
+              <button className={styles.analyzeButton}>
+                Analyze Compatibility →
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* Main Content */}
+        <div className={styles.mainContent}>
+          {/* Zodiac Signs Grid/List */}
+          <div className={styles.zodiacSection}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>
+                The 12 Zodiac Signs
+                <span className={styles.signsCount}> ({filteredSigns.length})</span>
+              </h2>
+              <div className={styles.elementsLegend}>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendIcon} style={{ color: '#FF6B6B' }}>🔥</span>
+                  <span>Fire</span>
+                </div>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendIcon} style={{ color: '#4ECDC4' }}>🌍</span>
+                  <span>Earth</span>
+                </div>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendIcon} style={{ color: '#45B7D1' }}>💨</span>
+                  <span>Air</span>
+                </div>
+                <div className={styles.legendItem}>
+                  <span className={styles.legendIcon} style={{ color: '#74B9FF' }}>💧</span>
+                  <span>Water</span>
+                </div>
+              </div>
+            </div>
+
+            {viewMode === 'grid' ? (
+              <div className={styles.zodiacGrid}>
+                {filteredSigns.map(sign => (
+                  <div
+                    key={sign.id}
+                    className={`${styles.zodiacCard} ${
+                      selectedSign?.id === sign.id ? styles.selected : ''
+                    } ${comparisonSigns.includes(sign) ? styles.comparisonSelected : ''}`}
+                    onClick={() => handleSignSelect(sign)}
+                    style={{
+                      '--zodiac-color': sign.color,
+                      '--element-color': getElementColor(sign.element),
+                    } as React.CSSProperties}
+                  >
+                    <div className={styles.cardHeader}>
+                      <div className={styles.zodiacSymbol}>{sign.symbol}</div>
+                      <div className={styles.zodiacInfo}>
+                        <h3 className={styles.cardTitle}>{sign.name}</h3>
+                        <div className={styles.cardDates}>{sign.dates}</div>
+                      </div>
+                      {comparisonSigns.includes(sign) && (
+                        <div className={styles.comparisonBadge}>✓</div>
+                      )}
+                    </div>
+
+                    <div className={styles.cardBody}>
+                      <div className={styles.elementBadge}>
+                        <span className={styles.elementIcon}>
+                          {getElementIcon(sign.element)}
+                        </span>
+                        <span>{sign.element}</span>
+                      </div>
+                      <div className={styles.cardTraits}>
+                        {sign.traits.slice(0, 3).map((trait, index) => (
+                          <span key={index} className={styles.traitTag}>
+                            {trait}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className={styles.cardFooter}>
+                      <div className={styles.planetInfo}>
+                        <span className={styles.planetIcon}>🪐</span>
+                        {sign.rulingPlanet}
+                      </div>
+                      <div className={styles.houseBadge}>
+                        House {sign.house}
+                      </div>
+                    </div>
+
+                    <div className={styles.cardGlow}></div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className={styles.zodiacList}>
+                {filteredSigns.map(sign => (
+                  <div
+                    key={sign.id}
+                    className={`${styles.listItem} ${
+                      selectedSign?.id === sign.id ? styles.selected : ''
+                    }`}
+                    onClick={() => handleSignSelect(sign)}
+                  >
+                    <div className={styles.listSymbol}>{sign.symbol}</div>
+                    <div className={styles.listContent}>
+                      <div className={styles.listHeader}>
+                        <h3>{sign.name}</h3>
+                        <span className={styles.listDates}>{sign.dates}</span>
+                      </div>
+                      <div className={styles.listDetails}>
+                        <span className={styles.listElement}>
+                          {getElementIcon(sign.element)} {sign.element}
+                        </span>
+                        <span className={styles.listPlanet}>🪐 {sign.rulingPlanet}</span>
+                        <span className={styles.listHouse}>House {sign.house}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Zodiac Details Panel */}
+          {selectedSign && !isComparing && (
+            <div className={styles.detailsPanel}>
+              <div className={styles.panelHeader}>
+                <div className={styles.panelSymbol} style={{ color: selectedSign.color }}>
+                  {selectedSign.symbol}
+                </div>
+                <div className={styles.panelTitle}>
+                  <h2>{selectedSign.name}</h2>
+                  <div className={styles.panelSubtitle}>
+                    <span className={styles.panelDates}>{selectedSign.dates}</span>
+                    <span className={styles.panelElement}>
+                      {getElementIcon(selectedSign.element)} {selectedSign.element} • {selectedSign.modality}
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className={styles.addToComparison}
+                  onClick={() => {
+                    if (!comparisonSigns.includes(selectedSign) && comparisonSigns.length < 3) {
+                      setComparisonSigns(prev => [...prev, selectedSign]);
+                    }
+                  }}
+                  disabled={comparisonSigns.includes(selectedSign) || comparisonSigns.length >= 3}
+                >
+                  + Compare
+                </button>
+              </div>
+
+              {isLoading ? (
+                <div className={styles.loadingPanel}>
+                  <div className={styles.loadingSpinner}></div>
+                  <p>Loading cosmic insights...</p>
+                </div>
+              ) : (
+                <>
+                  <div className={styles.panelContent}>
+                    {/* Overview */}
+                    <div className={styles.overviewSection}>
+                      <h3 className={styles.sectionTitle}>
+                        <span className={styles.titleIcon}>📖</span>
+                        Overview
+                      </h3>
+                      <p className={styles.description}>{selectedSign.description}</p>
+                      
+                      <div className={styles.keyFacts}>
+                        <div className={styles.factItem}>
+                          <div className={styles.factLabel}>Ruling Planet</div>
+                          <div className={styles.factValue}>
+                            <span className={styles.planetIcon}>🪐</span>
+                            {selectedSign.rulingPlanet}
+                          </div>
+                        </div>
+                        <div className={styles.factItem}>
+                          <div className={styles.factLabel}>Element</div>
+                          <div className={styles.factValue}>
+                            <span className={styles.elementIcon}>
+                              {getElementIcon(selectedSign.element)}
+                            </span>
+                            {selectedSign.element}
+                          </div>
+                        </div>
+                        <div className={styles.factItem}>
+                          <div className={styles.factLabel}>Modality</div>
+                          <div className={styles.factValue}>{selectedSign.modality}</div>
+                        </div>
+                        <div className={styles.factItem}>
+                          <div className={styles.factLabel}>House</div>
+                          <div className={styles.factValue}>House {selectedSign.house}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Traits Grid */}
+                    <div className={styles.traitsGrid}>
+                      <div className={styles.traitsColumn}>
+                        <h3 className={styles.traitsTitle}>
+                          <span className={styles.titleIcon}>✨</span>
+                          Key Traits
+                        </h3>
+                        <div className={styles.traitsList}>
+                          {selectedSign.traits.map((trait, index) => (
+                            <div key={index} className={styles.traitItem}>
+                              <span className={styles.traitBullet}>•</span>
+                              {trait}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className={styles.traitsColumn}>
+                        <h3 className={styles.traitsTitle}>
+                          <span className={styles.titleIcon}>💪</span>
+                          Strengths
+                        </h3>
+                        <div className={styles.traitsList}>
+                          {selectedSign.strengths.map((strength, index) => (
+                            <div key={index} className={styles.traitItem}>
+                              <span className={styles.traitBullet}>✓</span>
+                              {strength}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className={styles.traitsColumn}>
+                        <h3 className={styles.traitsTitle}>
+                          <span className={styles.titleIcon}>⚠️</span>
+                          Weaknesses
+                        </h3>
+                        <div className={styles.traitsList}>
+                          {selectedSign.weaknesses.map((weakness, index) => (
+                            <div key={index} className={styles.traitItem}>
+                              <span className={styles.traitBullet}>•</span>
+                              {weakness}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Compatibility */}
+                    <div className={styles.compatibilitySection}>
+                      <h3 className={styles.sectionTitle}>
+                        <span className={styles.titleIcon}>💫</span>
+                        Best Compatibility
+                      </h3>
+                      <div className={styles.compatibilityGrid}>
+                        {selectedSign.compatibility.map((compatSign, index) => {
+                          const compat = zodiacSigns.find(z => z.name === compatSign);
+                          return compat ? (
+                            <div key={index} className={styles.compatCard}>
+                              <div className={styles.compatSymbol}>{compat.symbol}</div>
+                              <div className={styles.compatInfo}>
+                                <h4>{compat.name}</h4>
+                                <div className={styles.compatElement}>
+                                  {getElementIcon(compat.element)} {compat.element}
+                                </div>
+                              </div>
+                            </div>
+                          ) : null;
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Famous People */}
+                    <div className={styles.famousSection}>
+                      <h3 className={styles.sectionTitle}>
+                        <span className={styles.titleIcon}>🌟</span>
+                        Famous {selectedSign.name}s
+                      </h3>
+                      <div className={styles.famousGrid}>
+                        {selectedSign.famousPeople.map((person, index) => (
+                          <div key={index} className={styles.famousCard}>
+                            <div className={styles.famousAvatar}>
+                              {person.charAt(0)}
+                            </div>
+                            <div className={styles.famousName}>{person}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Cosmic Insights */}
+                    <div className={styles.insightsSection}>
+                      <h3 className={styles.sectionTitle}>
+                        <span className={styles.titleIcon}>🔮</span>
+                        Cosmic Insights
+                      </h3>
+                      <div className={styles.insightsContent}>
+                        <div className={styles.insightCard}>
+                          <div className={styles.insightIcon}>🌙</div>
+                          <div className={styles.insightText}>
+                            <strong>Moon Connection:</strong> {selectedSign.name}s are most 
+                            emotionally aligned during {selectedSign.element.toLowerCase()} seasons.
+                          </div>
+                        </div>
+                        <div className={styles.insightCard}>
+                          <div className={styles.insightIcon}>⭐</div>
+                          <div className={styles.insightText}>
+                            <strong>Career Path:</strong> Naturally drawn to {selectedSign.element.toLowerCase()}-based professions.
+                          </div>
+                        </div>
+                        <div className={styles.insightCard}>
+                          <div className={styles.insightIcon}>💖</div>
+                          <div className={styles.insightText}>
+                            <strong>Love Language:</strong> Express love through {selectedSign.element.toLowerCase()} element qualities.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.panelFooter}>
+                    <button className={styles.shareButton}>
+                      <span className={styles.shareIcon}>📤</span>
+                      Share Insights
+                    </button>
+                    <button className={styles.saveButton}>
+                      <span className={styles.saveIcon}>💾</span>
+                      Save to Profile
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+
+          {/* Comparison Panel */}
+          {isComparing && comparisonSigns.length > 0 && (
+            <ComparisonPanel signs={comparisonSigns} />
+          )}
+        </div>
+
+        {/* Footer */}
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <div className={styles.footerNote}>
+              <p>
+                <strong>Note:</strong> Zodiac insights are for entertainment and self-reflection purposes. 
+                Individual experiences may vary based on many factors beyond sun signs.
+              </p>
+            </div>
+            <div className={styles.footerLinks}>
+              <button className={styles.footerLink}>Zodiac Calendar</button>
+              <button className={styles.footerLink}>Element Guide</button>
+              <button className={styles.footerLink}>Birth Chart Calculator</button>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
+// Comparison Panel Component
+function ComparisonPanel({ signs }: { signs: ZodiacSign[] }) {
+  const getElementIcon = (element: string) => {
+    switch (element) {
+      case 'Fire': return '🔥';
+      case 'Earth': return '🌍';
+      case 'Air': return '💨';
+      case 'Water': return '💧';
+      default: return '✨';
+    }
+  };
+
+  return (
+    <div className={styles.comparisonPanel}>
+      <div className={styles.comparisonHeader}>
+        <h2 className={styles.comparisonTitle}>
+          <span className={styles.titleIcon}>⚖️</span>
+          Zodiac Comparison
+        </h2>
+        <p className={styles.comparisonSubtitle}>
+          Compare traits, elements, and compatibility between {signs.length} signs
+        </p>
+      </div>
+
+      <div className={styles.comparisonGrid}>
+        {/* Header Row */}
+        <div className={styles.comparisonRow}>
+          <div className={styles.comparisonLabel}></div>
+          {signs.map(sign => (
+            <div key={sign.id} className={styles.comparisonSignHeader}>
+              <div className={styles.compSymbol}>{sign.symbol}</div>
+              <h3>{sign.name}</h3>
+              <div className={styles.compElement}>
+                {getElementIcon(sign.element)} {sign.element}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Element Row */}
+        <div className={styles.comparisonRow}>
+          <div className={styles.comparisonLabel}>Element</div>
+          {signs.map(sign => (
+            <div key={sign.id} className={styles.comparisonCell}>
+              {sign.element}
+            </div>
+          ))}
+        </div>
+
+        {/* Modality Row */}
+        <div className={styles.comparisonRow}>
+          <div className={styles.comparisonLabel}>Modality</div>
+          {signs.map(sign => (
+            <div key={sign.id} className={styles.comparisonCell}>
+              {sign.modality}
+            </div>
+          ))}
+        </div>
+
+        {/* Ruling Planet Row */}
+        <div className={styles.comparisonRow}>
+          <div className={styles.comparisonLabel}>Ruling Planet</div>
+          {signs.map(sign => (
+            <div key={sign.id} className={styles.comparisonCell}>
+              {sign.rulingPlanet}
+            </div>
+          ))}
+        </div>
+
+        {/* Traits Row */}
+        <div className={styles.comparisonRow}>
+          <div className={styles.comparisonLabel}>Key Traits</div>
+          {signs.map(sign => (
+            <div key={sign.id} className={styles.comparisonCell}>
+              <div className={styles.traitsTags}>
+                {sign.traits.slice(0, 3).map((trait, idx) => (
+                  <span key={idx} className={styles.compTraitTag}>
+                    {trait}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Compatibility Row */}
+        <div className={styles.comparisonRow}>
+          <div className={styles.comparisonLabel}>Compatibility</div>
+          {signs.map(sign => (
+            <div key={sign.id} className={styles.comparisonCell}>
+              <div className={styles.compCompatibility}>
+                {sign.compatibility.slice(0, 2).map((comp, idx) => (
+                  <span key={idx} className={styles.compCompatTag}>
+                    {comp}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.comparisonActions}>
+        <button className={styles.compActionButton}>
+          <span className={styles.actionIcon}>📊</span>
+          Detailed Analysis
+        </button>
+        <button className={styles.compActionButton}>
+          <span className={styles.actionIcon}>💑</span>
+          Check Compatibility
+        </button>
+        <button className={styles.compActionButton}>
+          <span className={styles.actionIcon}>📥</span>
+          Export Comparison
+        </button>
+      </div>
+    </div>
+  );
+}
