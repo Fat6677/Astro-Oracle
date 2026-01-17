@@ -101,3 +101,85 @@ export default function ForgotPasswordScreen() {
     router.push('/(auth)/register');
   };
   
+  return (
+    <CosmicBackground 
+      showStars={true}
+    >
+      <SafeAreaView style={styles.safeArea}>
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+        >
+          <View style={styles.content}>
+            
+            {/* Back Button */}
+            <TouchableOpacity 
+              style={styles.backButton}
+              onPress={handleBackToLogin}
+              activeOpacity={0.7}
+            >
+              <Ionicons name="arrow-back" size={24} color={CosmicColors.light} />
+              <Text style={styles.backButtonText}>Back to Login</Text>
+            </TouchableOpacity>
+            
+            {/* Header Section */}
+            <View style={styles.headerContainer}>
+              <View style={styles.iconContainer}>
+                <Ionicons name="key-outline" size={40} color={CosmicColors.accent} />
+                <View style={styles.iconGlow} />
+              </View>
+              
+              <Text style={styles.title}>Forgot Password</Text>
+              <Text style={styles.subtitle}>
+                Enter your email address and well send you instructions to reset your password
+              </Text>
+            </View>
+            
+            {/* Main Card */}
+            <AuthCard style={styles.authCard}>
+              
+              {emailSent ? (
+                // Success State
+                <View style={styles.successContainer}>
+                  <View style={styles.successIconContainer}>
+                    <Ionicons name="checkmark-circle" size={60} color={CosmicColors.facebook} />
+                    <View style={styles.successGlow} />
+                  </View>
+                  
+                  <Text style={styles.successTitle}>Email Sent!</Text>
+                  <Text style={styles.successMessage}>
+                    Weve sent password reset instructions to:
+                  </Text>
+                  <Text style={styles.successEmail}>{email}</Text>
+                  
+                  <Text style={styles.successInstruction}>
+                    Please check your inbox and follow the instructions to reset your password.
+                  </Text>
+                  
+                  <View style={styles.successActions}>
+                    <CosmicButton
+                      onPress={handleBackToLogin}
+                      cosmicVariant="secondary"
+                      glowEffect={false}
+                      style={styles.backButtonSuccess}
+                    >
+                      Back to Login
+                    </CosmicButton>
+                    
+                    <Text style={styles.resendText}>
+                      Didnt receive the email?{' '}
+                      <Text 
+                        style={styles.resendLink}
+                        onPress={() => {
+                          setEmailSent(false);
+                          handleResetPassword();
+                        }}
+                      >
+                        Resend
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              ) : (
+ 
