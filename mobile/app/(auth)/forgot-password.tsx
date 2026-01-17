@@ -182,4 +182,104 @@ export default function ForgotPasswordScreen() {
                   </View>
                 </View>
               ) : (
- 
+                // Form State
+                <>
+                  {/* Email Input */}
+                  <View style={styles.inputContainer}>
+                    <Text style={styles.inputLabel}>Email Address</Text>
+                    <View style={styles.inputWrapper}>
+                      <Ionicons 
+                        name="mail-outline" 
+                        size={20} 
+                        color={CosmicColors.light} 
+                        style={styles.inputIcon}
+                      />
+                      <TextInput
+                        style={styles.textInput}
+                        placeholder="Enter your email"
+                        placeholderTextColor={CosmicColors.light + '80'}
+                        value={email}
+                        onChangeText={setEmail}
+                        keyboardType="email-address"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        editable={!isLoading}
+                        selectionColor={CosmicColors.accent}
+                      />
+                      {email.length > 0 && (
+                        <TouchableOpacity 
+                          onPress={() => setEmail('')}
+                          style={styles.clearButton}
+                        >
+                          <Ionicons name="close-circle" size={20} color={CosmicColors.light} />
+                        </TouchableOpacity>
+                      )}
+                    </View>
+                    
+                    {/* Validation Hint */}
+                    {email.length > 0 && !validateEmail(email) && (
+                      <Text style={styles.validationText}>
+                        Please enter a valid email address
+                      </Text>
+                    )}
+                  </View>
+                  
+                  {/* Submit Button */}
+                  <CosmicButton
+                    onPress={handleResetPassword}
+                    loading={isLoading}
+                    disabled={isLoading || !validateEmail(email)}
+                    cosmicVariant="primary"
+                    glowEffect={true}
+                    style={styles.submitButton}
+                  >
+                    SEND RESET INSTRUCTIONS
+                  </CosmicButton>
+                  
+                  {/* Info Box */}
+                  <View style={styles.infoContainer}>
+                    <Ionicons name="information-circle" size={20} color={CosmicColors.google} />
+                    <Text style={styles.infoText}>
+                      Make sure to enter the email address associated with your Cosmic account.
+                    </Text>
+                  </View>
+                </>
+              )}
+              
+              {/* Divider */}
+              <View style={styles.divider}>
+                <View style={styles.dividerLine} />
+                <Text style={styles.dividerText}>OR</Text>
+                <View style={styles.dividerLine} />
+              </View>
+              
+              {/* Alternative Action */}
+              <View style={styles.alternativeContainer}>
+                <Text style={styles.alternativeText}>
+                  Dont have an account yet?
+                </Text>
+                <TouchableOpacity 
+                  onPress={handleGoToRegister}
+                  style={styles.alternativeButton}
+                >
+                  <Text style={styles.alternativeButtonText}>Create New Account</Text>
+                  <Ionicons name="arrow-forward" size={16} color={CosmicColors.accent} />
+                </TouchableOpacity>
+              </View>
+              
+            </AuthCard>
+            
+            {/* Footer */}
+            <View style={styles.footer}>
+              <Text style={styles.footerText}>
+                Need help?{' '}
+                <Text style={styles.footerLink}>Contact Support</Text>
+              </Text>
+            </View>
+            
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </CosmicBackground>
+  );
+}
