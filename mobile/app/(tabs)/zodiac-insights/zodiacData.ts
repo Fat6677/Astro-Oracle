@@ -440,4 +440,42 @@ export const zodiacData: ZodiacSign[] = [
     luckyNumbers: [4, 7, 11],
   },
   
+    {
+    id: 'pisces',
+    name: 'Pisces',
+    symbol: '♓',
+    element: 'Water',
+    quality: 'Mutable',
+    rulingPlanet: 'Neptune',
+    dates: 'February 19 - March 20',
+    
+    personality: {
+      strengths: ['Compassionate', 'Artistic', 'Intuitive', 'Gentle', 'Wise'],
+      weaknesses: ['Fearful', 'Overly trusting', 'Sad', 'Desire to escape reality'],
+      keywords: ['Dreamer', 'Empath', 'Creative', 'Spiritual'],
+    },
+    
+    insights: {
+      overview: 'Pisces adalah visioner zodiak - intuitif, spiritual, dan sangat kreatif. Mereka adalah penghubung antara dunia fisik dan spiritual.',
+      loveCompatibility: ['Cancer', 'Scorpio', 'Taurus', 'Capricorn'],
+      careerPaths: ['Artist', 'Musician', 'Psychic', 'Marine Biologist', 'Nurse'],
+      famousPisces: ['Rihanna', 'Albert Einstein', 'Steve Jobs', 'Kurt Cobain'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Air memberi Pisces sensitivitas tinggi dan kemampuan untuk merasakan energi orang lain.',
+      planetAnalysis: 'Neptune memberi Pisces sifat mistis dan hubungan dengan alam bawah sadar.',
+      houseAssociation: 'Rumah Keduabelas - Rumah Spiritualitas dan Subconscious.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Spirituality & Creativity',
+      advice: 'Fokus pada perkembangan spiritual dan ekspresi kreatif.',
+      challenges: 'Tetap grounded di realitas dan menghindari pelarian.',
+    },
+    
+    colors: ['Sea Green', 'Purple', 'Violet'],
+    gemstones: ['Aquamarine', 'Amethyst', 'Moonstone'],
+    luckyNumbers: [3, 9, 12],
+  },
 ];
