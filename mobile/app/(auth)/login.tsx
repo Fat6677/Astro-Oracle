@@ -19,6 +19,14 @@ import CosmicButton from '../../components/Common/CosmicButton';
 
 // Styles
 import { CosmicColors } from '../../constants/CosmicColors';
+import { loginScreenStyles as styles } from '../(auth)/style/LoginScreen.styles';
+
+// Types
+interface LoginFormData {
+  username: string;
+  password: string;
+  rememberMe: boolean;
+}
 
 
 export default function LoginScreen() {
@@ -108,7 +116,7 @@ export default function LoginScreen() {
               {/* Link untuk registrasi akun baru */}
               <View style={styles.signupContainer}>
                 <Text style={styles.signupText}>
-                  Don't have a cosmic account?{' '}
+                  Dont have a cosmic account?{' '}
                 </Text>
                 <TouchableOpacity 
                   onPress={handleSignUp}
