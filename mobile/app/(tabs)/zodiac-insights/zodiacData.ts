@@ -244,4 +244,43 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Sapphire', 'Carnelian', 'Peridot'],
     luckyNumbers: [5, 14, 23],
   },
+
+   {
+    id: 'libra',
+    name: 'Libra',
+    symbol: '♎',
+    element: 'Air',
+    quality: 'Cardinal',
+    rulingPlanet: 'Venus',
+    dates: 'September 23 - October 22',
+    
+    personality: {
+      strengths: ['Cooperative', 'Diplomatic', 'Gracious', 'Fair-minded', 'Social'],
+      weaknesses: ['Indecisive', 'Avoids confrontations', 'Self-pity', 'Unreliable'],
+      keywords: ['Diplomat', 'Romantic', 'Charming', 'Balance-seeker'],
+    },
+    
+    insights: {
+      overview: 'Libra adalah diplomat zodiak - selalu mencari harmoni, keadilan, dan keindahan. Mereka adalah penghubung antar manusia.',
+      loveCompatibility: ['Gemini', 'Aquarius', 'Leo', 'Sagittarius'],
+      careerPaths: ['Lawyer', 'Mediator', 'Artist', 'Counselor', 'Stylist'],
+      famousLibra: ['Kim Kardashian', 'Will Smith', 'Bruno Mars', 'Gwyneth Paltrow'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Udara memberi Libra kemampuan untuk melihat semua sisi dan mencari keseimbangan.',
+      planetAnalysis: 'Venus memberi Libra cinta akan keindahan dan hubungan yang harmonis.',
+      houseAssociation: 'Rumah Ketujuh - Rumah Partnership dan Pernikahan.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Relationships & Harmony',
+      advice: 'Fokus pada hubungan yang seimbang dan kerja sama.',
+      challenges: 'Belajar mengambil keputusan tegas dan menghadapi konflik.',
+    },
+    
+    colors: ['Pink', 'Blue', 'Emerald'],
+    gemstones: ['Opal', 'Lapis Lazuli', 'Diamond'],
+    luckyNumbers: [6, 15, 24],
+  },
 ];
