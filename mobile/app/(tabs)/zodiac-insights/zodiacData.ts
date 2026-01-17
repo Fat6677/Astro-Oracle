@@ -283,4 +283,43 @@ export const zodiacData: ZodiacSign[] = [
     gemstones: ['Opal', 'Lapis Lazuli', 'Diamond'],
     luckyNumbers: [6, 15, 24],
   },
+
+    {
+    id: 'scorpio',
+    name: 'Scorpio',
+    symbol: '♏',
+    element: 'Water',
+    quality: 'Fixed',
+    rulingPlanet: 'Pluto',
+    dates: 'October 23 - November 21',
+    
+    personality: {
+      strengths: ['Brave', 'Passionate', 'Stubborn', 'Resourceful', 'True'],
+      weaknesses: ['Distrusting', 'Jealous', 'Secretive', 'Violent'],
+      keywords: ['Intense', 'Mysterious', 'Transformative', 'Powerful'],
+    },
+    
+    insights: {
+      overview: 'Scorpio adalah zodiak paling misterius dan intens - penuh gairah, intuitif, dan transformatif. Mereka memiliki kedalaman yang tidak dimiliki zodiak lain.',
+      loveCompatibility: ['Cancer', 'Pisces', 'Virgo', 'Capricorn'],
+      careerPaths: ['Detective', 'Psychologist', 'Researcher', 'Surgeon', 'Banker'],
+      famousScorpio: ['Drake', 'Julia Roberts', 'Ryan Gosling', 'Bill Gates'],
+    },
+    
+    cosmicAnalysis: {
+      elementAnalysis: 'Air memberi Scorpio kedalaman emosi dan kemampuan untuk melihat dibawah permukaan.',
+      planetAnalysis: 'Pluto memberi Scorpio sifat transformatif dan hubungan dengan kehidupan-kematian-kelahiran kembali.',
+      houseAssociation: 'Rumah Kedelapan - Rumah Transformasi dan Kehidupan Batin.',
+    },
+    
+    yearlyFocus: {
+      theme: 'Transformation & Power',
+      advice: 'Fokus pada transformasi pribadi dan menghadapi ketakutan terdalam.',
+      challenges: 'Belajar mempercayai orang lain dan mengendalikan kecemburuan.',
+    },
+    
+    colors: ['Black', 'Red', 'Burgundy'],
+    gemstones: ['Topaz', 'Obsidian', 'Malachite'],
+    luckyNumbers: [8, 11, 18],
+  },
 ];
