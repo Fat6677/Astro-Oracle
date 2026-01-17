@@ -91,3 +91,60 @@ export const forgotPasswordStyles = StyleSheet.create({
   },
   
   
+  // ===== CARD STYLES =====
+  authCard: {
+    width: '100%',
+    padding: 25,
+  },
+  
+  
+  // ===== INPUT STYLES =====
+  inputContainer: {
+    marginBottom: 25,
+  },
+  
+  inputLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: CosmicColors.light,
+    marginBottom: 8,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  
+  inputWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(108, 99, 255, 0.3)',
+    paddingHorizontal: 15,
+    height: 56,
+  },
+  
+  textInput: {
+    flex: 1,
+    color: CosmicColors.light,
+    fontSize: 16,
+    paddingVertical: 15,
+    marginLeft: 10,
+    fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+  },
+  
+  inputIcon: {
+    opacity: 0.7,
+  },
+  
+  clearButton: {
+    padding: 5,
+  },
+  
+  validationText: {
+    fontSize: 12,
+    color: CosmicColors.secondary,
+    marginTop: 5,
+    marginLeft: 5,
+  },
+  
+  
